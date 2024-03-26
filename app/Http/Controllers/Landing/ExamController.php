@@ -60,46 +60,56 @@ class ExamController extends Controller
             ->where('user_id', auth()->id())
             ->first();
 
-        // Jika ada skor ujian sebelumnya dan pengguna belum lulus, perbarui skor dengan yang baru
-        if ($examScore && !$examScore->passed) {
-            $examIds = $request->input('exam_ids');
-            $userAnswers = $request->input('answers');
+        // Lakukan penghitungan skor seperti sebelumnya
+        $examIds = $request->input('exam_ids');
+        $userAnswers = $request->input('answers');
 
-            $totalQuestions = count($examIds);
-            $correctAnswers = 0;
+        $totalQuestions = count($examIds);
+        $correctAnswers = 0;
 
-            foreach ($examIds as $examId) {
-                $exam = Exam::find($examId);
+        foreach ($examIds as $examId) {
+            $exam = Exam::find($examId);
 
-                if ($exam && isset($userAnswers[$examId])) {
-                    if ((int) $userAnswers[$examId] === $exam->correct_answer) {
-                        $correctAnswers++;
-                    }
+            if ($exam && isset($userAnswers[$examId])) {
+                if ((int) $userAnswers[$examId] === $exam->correct_answer) {
+                    $correctAnswers++;
                 }
             }
+        }
 
-            $score = round(($correctAnswers / $totalQuestions) * 100);
-            $passed = $score >= 65;
+        $score = round(($correctAnswers / $totalQuestions) * 100);
+        $passed = $score >= 65;
 
+        // Jika ada skor ujian sebelumnya dan pengguna belum lulus, perbarui skor dengan yang baru
+        if ($examScore && !$examScore->passed) {
             // Perbarui skor ujian yang ada
             $examScore->score = $score;
             $examScore->passed = $passed;
             $examScore->save();
-
-            // Jika lulus, simpan sertifikat
-            if ($passed) {
-                $certificate = new Certificate();
-                $certificate->course_id = $course->id;
-                $certificate->user_id = auth()->id();
-                $certificate->score = $score;
-                $certificate->serial_number = uniqid(); // generate unique serial number
-                $certificate->file_path = ''; // set file path
-                $certificate->save();
-            }
-
-            return redirect()
-                ->route('exams.examDetail', [$course->slug])
-                ->with('toast_success', 'Skor ujian berhasil diperbarui. Skor Anda sekarang: ' . $score);
+        } else {
+            // Jika tidak ada skor ujian sebelumnya, buat yang baru
+            $examScore = new ExamScore([
+                'course_id' => $course->id,
+                'user_id' => auth()->id(),
+                'score' => $score,
+                'passed' => $passed,
+            ]);
+            $examScore->save();
         }
+
+        // Jika lulus, simpan sertifikat
+        if ($passed) {
+            $certificate = new Certificate();
+            $certificate->course_id = $course->id;
+            $certificate->user_id = auth()->id();
+            $certificate->score = $score;
+            $certificate->serial_number = uniqid(); // generate unique serial number
+            $certificate->file_path = ''; // set file path
+            $certificate->save();
+        }
+
+        return redirect()
+            ->route('exams.examDetail', [$course->slug])
+            ->with('toast_success', 'Skor ujian berhasil diperbarui. Skor Anda sekarang: ' . $score);
     }
 }

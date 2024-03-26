@@ -43,6 +43,10 @@ Route::fallback(function () {
 
 // home route
 Route::get('/', HomeController::class)->name('home');
+Route::view('/tim', 'landing.tim')->name('tim');
+// Route::view('/tiket', 'pages.tiket')->name('tiket');
+Route::view('/faq', 'landing.faq')->name('faq');
+Route::view('/tentang', 'landing.tentang')->name('tentang');
 // course route
 Route::controller(LandingCourseController::class)
     ->as('course.')

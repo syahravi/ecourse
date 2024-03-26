@@ -6,27 +6,27 @@
                     E-Unusia
                 </a>
                 <p class="max-w-md mt-2 text-sm text-center md:text-start text-slate-800 hover:text-teal-500">
-                    Website Belajar Coding bahasa Indonesia terlengkap dan mudah dipahami.
+                    Jl. Taman Amir Hamzah No.5, RT.8/RW.4, Pegangsaan, Kec. Menteng, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10320
                 </p>
             </div>
             <div>
                 <div>
                     <h3 class="text-black uppercase">Informasi</h3>
-                    <a href="#" class="block mt-2 text-sm text-slate-800 hover:text-teal-500 hover:underline">
+                    <a href="{{route('tentang')}}" class="block mt-2 text-sm text-slate-800 hover:text-teal-500 hover:underline">
                         Tentang Kami
                     </a>
-                    <a href="#" class="block mt-2 text-sm text-slate-800 hover:text-teal-500 hover:underline">FAQ</a>
-                    <a href="#" class="block mt-2 text-sm text-slate-800 hover:text-teal-500 hover:underline">Tim Kami</a>
+                    <a href="{{route('faq')}}" class="block mt-2 text-sm text-slate-800 hover:text-teal-500 hover:underline">FAQ</a>
+                    <a href=" {{route('tim')}}" class="block mt-2 text-sm text-slate-800 hover:text-teal-500 hover:underline">Tim Kami</a>
                 </div>
             </div>
             <div>
                 <div>
                     <h3 class="text-black uppercase">Komunitas</h3>
-                    <a href="#" class="block mt-2 text-sm text-slate-800 hover:text-teal-500 hover:underline">
+                    <a href="{{route('review')}}" class="block mt-2 text-sm text-slate-800 hover:text-teal-500 hover:underline">
                         Ulasan Member
                     </a>
-                    <a href="#" class="block mt-2 text-sm text-slate-800 hover:text-teal-500 hover:underline">Grup Telegram</a>
-                    <a href="#" class="block mt-2 text-sm text-slate-800 hover:text-teal-500 hover:underline">Komunitas Discord</a>
+                    <a href="https://t.me/+z4Bf1UgLJZZlYTI9" class="block mt-2 text-sm text-slate-800 hover:text-teal-500 hover:underline">Grup Telegram</a>
+                    <a href="https://discord.com/invite/hsASa2uV" class="block mt-2 text-sm text-slate-800 hover:text-teal-500 hover:underline">Komunitas Discord</a>
                 </div>
             </div>
         </div>

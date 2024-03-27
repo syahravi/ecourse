@@ -7,7 +7,7 @@
                 <div class="grid items-start grid-cols-1 gap-10 lg:grid-cols-12">
                     <div class="lg:col-span-9 w-full h-auto ">
                         <!-- Konten grid kedua untuk mobile -->
-                        <a href="{{ route('Landing.certificates.pdf', ['user' => $certificate->user->name, 'course' => $courseName, 'serialNumber' => $certificate->serial_number]) }}"
+                        <a href="{{ route('landing.certificates.pdf', ['user' => $certificate->user->name, 'course' => $courseName, 'serialNumber' => $certificate->serial_number]) }}"
                             target="_blank" rel="noopener noreferrer"
                             class="relative overflow-hidden transition-transform transform-gpu duration-300 ease-in-out hover:scale-105 block">
                             <div class=" shadow-lg" id="pdf-viewer"></div>
@@ -129,7 +129,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script>
         const url =
-            '{{ route('Landing.certificates.pdf', ['user' => $certificate->user->name, 'course' => $courseName , 'serialNumber' => $certificate->serial_number]) }}';
+            '{{ route('landing.certificates.pdf', ['user' => $certificate->user->name, 'course' => $courseName , 'serialNumber' => $certificate->serial_number]) }}';
         const pdfViewer = document.getElementById('pdf-viewer');
 
         // Load PDF

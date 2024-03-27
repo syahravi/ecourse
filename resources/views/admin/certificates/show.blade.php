@@ -9,7 +9,7 @@
         }
 
         body {
-            background-image: url('{{ asset('sertifikat/sertifikat kompetensi.png') }}');
+            background-image: url('{{ asset('sertifikat/sertifikat33.png') }}');
             background-size: cover;
             background-repeat: no-repeat;
             padding: 1in;

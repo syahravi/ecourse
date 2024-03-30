@@ -1,4 +1,4 @@
-@extends('layouts.backend.app', ['title' => 'SOAL'])
+@extends('layouts.backend.app', ['title' => 'tambah soal'])
 
 @section('content')
     <div class="row d-flex justify-content-center">

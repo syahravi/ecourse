@@ -38,32 +38,6 @@
             </a>
         </div>
     </section>
-    {{-- <section class="w-full p-6 bg-slate-500 ">
-        <div class="flex flex-col items-center justify-center p-4 space-y-8 md:p-10 md:px-24 xl:px-48">
-            <h1 class="text-2xl md:text-3xl font-bold leading-none text-center text-white">
-                TUNGGU APA LAGI ?
-            </h1>
-            <p class="text-sm md:text-base font-medium text-center text-white">
-                Belajar lebih terarah dan sistematis dengan materi berkualitas tinggi beserta pendampingan mentoring secara
-                intensif.
-            </p>
-            <div class="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-8">
-                <a href="{{ route('register') }}"
-                    class="px-4 py-2 rounded-lg bg-slate-800 hover:text-teal-500 text-white text-base flex items-center gap-2 hover:scale-110 hover:duration-200 ">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus" width="24"
-                        height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <circle cx="9" cy="7" r="4"></circle>
-                        <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
-                        <path d="M16 11h6m-3 -3v6"></path>
-                    </svg>
-                    Daftar Gratis!
-                </a>
-            </div>
-        </div>
-    </section> --}}
-
     <div class="bg-teal-100">
         <section class="py-10 sm:pt-16 lg:pt-20">
             <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">

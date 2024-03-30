@@ -68,8 +68,14 @@ class SocialiteController extends Controller
                     'email' => $socialUser->getEmail(),
                 ]);
 
-                
-            } 
+                // Setelah membuat pengguna baru, tambahkan peran ke pengguna
+                $user->assignRole('member');
+            } else {
+                // Jika pengguna sudah ada, pastikan peran ditambahkan jika belum ada
+                if (!$user->hasRole('member')) {
+                    $user->assignRole('member');
+                }
+            }
 
             $user->socialAccounts()->create([
                 'provider_id'   => $socialUser->getId(),

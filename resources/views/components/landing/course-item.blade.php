@@ -3,12 +3,12 @@
 <a href="{{ route('course.show', $course->slug) }}" class="max-w-sm rounded overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105">
     <img class="w-full rounded-t-lg object-cover h-44 sm:h-48 md:h-56" src="{{ $course->image }}" alt="{{ $course->name }}">
     <div class="px-6 py-4">
-        <h1 class="font-bold text-lg sm:text-xl mb-2 text-blue-500 hover:underline">
+        <h1 class="font-bold text-lg sm:text-xl mb-2 text-black hover:underline">
             {{ $course->name }}
         </h1>
-        <p class="text-gray-700 text-sm sm:text-base">
-            {{ $course->description }}
-        </p>
+        <p class="text-gray-500 text-sm sm:text-base">
+            {{ implode(' ', array_slice(explode(' ', $course->description), 0, 5)) }}...
+        </p>        
     </div>
     <div class="px-6 py-4">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2 text-xs sm:text-sm my-2">

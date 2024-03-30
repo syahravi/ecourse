@@ -1,7 +1,7 @@
 @extends('layouts.frontend.app', ['title' => 'Course'])
 
 @section('content')
-    <div id="default-carousel" class="relative w-full h-full pt-5 md:pt-24" data-carousel="slide">
+    <div id="default-carousel" class="relative w-full h-full pt-7 md:pt-24" data-carousel="slide">
         <!-- Carousel wrapper -->
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
             <!-- Item 1 -->

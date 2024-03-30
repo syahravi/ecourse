@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 use Exception;
+use Spatie\Permission\Models\Role; // Import Role dari Spatie
 
 class SocialiteController extends Controller
 {
@@ -66,7 +67,9 @@ class SocialiteController extends Controller
                     'name'  => $socialUser->getName(),
                     'email' => $socialUser->getEmail(),
                 ]);
-            }
+
+                
+            } 
 
             $user->socialAccounts()->create([
                 'provider_id'   => $socialUser->getId(),

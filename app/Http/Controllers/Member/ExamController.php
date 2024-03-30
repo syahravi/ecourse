@@ -12,10 +12,7 @@ class ExamController extends Controller
 {
     public function index($slug)
     {
-        // tampung data course kedalam variabel $course, yang dimana "slug"nya sama dengan variabel $slug.
         $course = Course::where('slug', $slug)->first();
-
-        // tampung seluruh data video kedalam variabel $videos, yang dimana "course_id"nya sama dengan variable $course->id.
         $exams = Exam::where('course_id', $course->id)->get();
         return view('member.exams.index', compact('exams', 'course'));
     }
@@ -29,6 +26,16 @@ class ExamController extends Controller
     public function store($slug, ExamRequest $request)
     {
         $course = Course::where('slug', $slug)->first();
+
+        $request->validate([
+            'question' => 'required',
+            'option1' => 'required',
+            'option2' => 'required',
+            'option3' => 'required',
+            'option4' => 'required',
+            'soal' => 'required|integer',
+            'correct_answer' => 'required|integer|between:1,4',
+        ]);
 
         $course->exams()->create([
             'question' => $request->question,
@@ -51,10 +58,12 @@ class ExamController extends Controller
 
     public function update($slug, ExamRequest $request, Exam $exam)
     {
-        // tampung data course kedalam variabel $course, yang dimana "slug"nya sama dengan variabel $slug.
+        $request->validate([
+            'correct_answer' => 'required|integer|between:1,4',
+        ]);
+
         $course = Course::where('slug', $slug)->first();
 
-        // update data video berdasarkan id
         $exam->update([
             'question' => $request->question,
             'option1' => $request->option1,
@@ -65,18 +74,12 @@ class ExamController extends Controller
             'correct_answer' => $request->correct_answer,
         ]);
 
-        // kembali kehalaman member/video/index dengan variabel $course dan toastr.
-        return redirect(route('member.exams.index', $course))->with('toast_success', 'exams Updated');
+        return redirect(route('member.exams.index', $slug))->with('toast_success', 'Exams Updated');
     }
 
-    
-
-    public function destroy( Exam $exam)
+    public function destroy(Exam $exam)
     {
-        
         $exam->delete();
-
-        // kembali kehalaman sebelumnya dengan membawa toastr
-        return back()->with('toast_success', 'exam Deleted');
+        return back()->with('toast_success', 'Exam Deleted');
     }
 }

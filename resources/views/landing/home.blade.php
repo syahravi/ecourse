@@ -39,7 +39,7 @@
         </div>
     </section>
     <div class="bg-teal-50">
-        <section class="py-10 sm:pt-16 lg:pt-20">
+        <section class="pt-10 sm:pt-16 lg:pt-20">
             <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
                     <div>
@@ -78,3 +78,6 @@
         </section>
     </div>
 @endsection
+
+
+

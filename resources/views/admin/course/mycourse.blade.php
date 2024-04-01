@@ -38,7 +38,7 @@
                                     </a>
                                     @if ($data->certificate_score)
                                         <a href="{{ route('Landing.certificates.show', ['user' => $data->transaction->user->name, 'course' => $data->course->name, 'serialNumber' => $data->certificate_serial_number]) }}"
-                                            class="btn btn-info btn-md mb-2 text-white">
+                                            class="btn btn-info btn-md mb-2 text-white w-100">
                                             <i class="fas fa-certificate mr-1"></i> Sertifikat
                                         </a>
                                     @endif

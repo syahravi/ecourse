@@ -109,7 +109,6 @@ class ExamController extends Controller
         }
 
         return redirect()
-            ->route('exams.examDetail', [$course->slug])
-            ->with('toast_success', 'Skor ujian berhasil diperbarui. Skor Anda sekarang: ' . $score);
+            ->route('exams.examDetail', [$course->slug]);
     }
 }

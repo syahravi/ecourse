@@ -36,7 +36,7 @@
 
     <!-- sweet alert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script type="text/javascript">
         function deleteData(id) {
             const swalWithBootstrapButtons = Swal.mixin({

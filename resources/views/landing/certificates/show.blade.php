@@ -126,10 +126,10 @@
             </div>
         </section>
     </div>
+  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script>
-        const url =
-            '{{ route('Landing.certificates.pdf', ['user' => $certificate->user->name, 'course' => $courseName , 'serialNumber' => $certificate->serial_number]) }}';
+        const url = '{{ route('Landing.certificates.pdf', ['user' => $certificate->user->name, 'course' => $courseName , 'serialNumber' => $certificate->serial_number]) }}';
         const pdfViewer = document.getElementById('pdf-viewer');
 
         // Load PDF
@@ -162,7 +162,6 @@
                 pdfViewer.appendChild(canvas);
             });
         });
-
 
 
         function copyLink() {

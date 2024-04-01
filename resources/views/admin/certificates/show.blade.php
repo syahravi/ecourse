@@ -9,7 +9,7 @@
         }
 
         body {
-            background-image: url('{{ asset('sertifikat/sertifikat33.png') }}');
+            background-image: url('{{ secure_asset('sertifikat/sertifikat33.png') }}');
             background-size: cover;
             background-repeat: no-repeat;
             padding: 1in;
@@ -24,12 +24,13 @@
             color: #035657;
             /* Atur warna teks jika diperlukan */
             font-size: 45px;
-            text-transform: uppercase; 
+            text-transform: uppercase;
             /* Ukuran teks */
             font-weight: bold;
             font-family: 'Montserrat', sans-serif;
             /* Tebal (bold) */
         }
+
         .certificate-course {
             position: absolute;
             top: 64%;
@@ -44,6 +45,7 @@
             font-family: 'Montserrat', sans-serif;
             /* Tebal (bold) */
         }
+
         .certificate-date {
             position: absolute;
             top: 70%;

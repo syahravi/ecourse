@@ -24,13 +24,12 @@
             color: #035657;
             /* Atur warna teks jika diperlukan */
             font-size: 45px;
-            text-transform: uppercase;
+            text-transform: uppercase; 
             /* Ukuran teks */
             font-weight: bold;
             font-family: 'Montserrat', sans-serif;
             /* Tebal (bold) */
         }
-
         .certificate-course {
             position: absolute;
             top: 64%;
@@ -45,7 +44,6 @@
             font-family: 'Montserrat', sans-serif;
             /* Tebal (bold) */
         }
-
         .certificate-date {
             position: absolute;
             top: 70%;

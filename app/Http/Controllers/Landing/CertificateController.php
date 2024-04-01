@@ -110,6 +110,6 @@ class CertificateController extends Controller
         $pdf->render();
 
         // Tampilkan pratinjau sertifikat
-        return $pdf->stream('certificaates e-course unusia.pdf', ['Attachment' => false]);
+        return $pdf->stream('dompdf_out.pdf', ['Attachment' => false]);
     }
 }

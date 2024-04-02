@@ -1,0 +1,33 @@
+{
+  "todotree": {
+    "tree": [
+      {
+        "key": 1712056294747,
+        "children": [],
+        "todo": {
+          "content": "ecourse.todo",
+          "id": 1712056294747,
+          "level": "default",
+          "done": true,
+          "start": 1712056294747,
+          "focus": false,
+          "end": 1712056403917
+        }
+      }
+    ],
+    "expandKeys": [],
+    "schema": "https://github.com/Saber2pr/vsc-ext-todolist/blob/master/src/api/type.ts#L3",
+    "add_mode": "top",
+    "virtual": false,
+    "timelines": [],
+    "showLine": false,
+    "restDays": [],
+    "playFontSize": 24,
+    "title": "ecourse",
+    "autoSort": false,
+    "showEndTime": false,
+    "simpleMode": false,
+    "lang": "en",
+    "version": "1712056506086"
+  }
+}

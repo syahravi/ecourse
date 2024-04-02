@@ -1,59 +1,6 @@
 @extends('layouts.auth.app', ['title' => 'Register'])
 
 @section('content')
-    {{-- <div class="card-body">
-
-        <form action="{{ route('register') }}" method="post">
-            @csrf
-            
-            
-
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror"
-                    value="{{ old('name') }}" required>
-                @error('name')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" class="form-control @error('email') is-invalid @enderror"
-                    value="{{ old('email') }}" required>
-                @error('email')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password"
-                    class="form-control @error('password') is-invalid @enderror" required>
-                @error('password')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-
-            <div class="form-group">
-                <label for="password_confirmation">Password Confirmation</label>
-                <input type="password" id="password_confirmation" name="password_confirmation"
-                    class="form-control @error('password') is-invalid @enderror" required>
-            </div>
-
-            <button type="submit" class="btn btn-primary btn-block">Register</button>
-        </form>
-
-        <div class="mt-4">
-            <p>Already have an account? <a href="{{ route('login') }}">Log in here</a></p>
-        </div>
-    </div> --}}
 
 
     <section class="bg-white">
@@ -165,61 +112,15 @@
                                 Daftar
                             </button>
                         </div>
-                    
-                        <div class="space-y-3 mt-3">
-                            <a href="/auth/google" type="button"
-                                class="relative inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-gray-700 transition-all duration-200 bg-white border-2 border-gray-200 rounded-md hover:bg-gray-100 focus:bg-gray-100 hover:text-black focus:text-black focus:outline-none">
-                                <div class="absolute inset-y-0 left-0 p-4">
-                                    <img src="{{ asset('asset/googleicon.svg') }}" alt="google icon" class="w-6 h-6">
-                                </div>
-                                Masuk dengan Google
-                            </a>
-                            <a href="/auth/facebook" type="button"
-                                class="relative inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-gray-700 transition-all duration-200 bg-white border-2 border-gray-200 rounded-md hover:bg-gray-100 focus:bg-gray-100 hover:text-black focus:text-black focus:outline-none">
-                                <div class="absolute inset-y-0 left-0 p-4">
-                                    <svg class="w-6 h-6 text-[#2563EB]" xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 24 24" fill="currentColor">
-                                        <path
-                                            d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z">
-                                        </path>
-                                    </svg>
-                    
-                                </div>
-                                Masuk dengan Facebook
-                            </a>
-                            <a href="/auth/github" type="button"
-                                class="relative inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-gray-700 transition-all duration-200 bg-white border-2 border-gray-200 rounded-md hover:bg-gray-100 focus:bg-gray-100 hover:text-black focus:text-black focus:outline-none">
-                                <div class="absolute inset-y-0 left-0 p-4">
-                                    <svg class="w-6 h-6 text-[#333333]" xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 24 24" fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                            d="M12 0C5.37 0 0 5.37 0 12c0 5.302 3.438 9.8 8.208 11.385.6.11.82-.26.82-.58 0-.29-.01-1.26-.01-2.29-3.002.65-3.891-.72-4.141-1.39-.141-.36-.76-1.39-1.3-1.67-.44-.28-1.06-.97-.01-.98.98-.01 1.68.9 1.92 1.3 1.13 1.87 2.93 1.35 3.64 1.03.11-.82.44-1.38.8-1.7-2.81-.32-5.75-1.41-5.75-6.28 0-1.39.49-2.52 1.3-3.41-.13-.33-.56-1.61.12-3.35 0 0 1.06-.34 3.5 1.3 1-.28 2.06-.42 3.12-.42 1.06 0 2.12.14 3.12.42 2.44-1.64 3.5-1.3 3.5-1.3.68 1.74.25 3.02.13 3.35.81.89 1.3 2.02 1.3 3.41 0 4.88-2.95 5.96-5.77 6.28.45.39.85 1.16.85 2.34 0 1.69-.01 3.05-.01 3.47 0 .32.22.7.83.58C20.565 21.797 24 17.287 24 12c0-6.63-5.37-12-12-12">
-                                        </path>
-                                    </svg>
-                                </div>
-                                Masuk dengan GitHub
-                            </a>
                         </div>
                     </form>
-                    
-
-
-
-                    <p class="mt-5 text-sm text-gray-600">
-                        Situs ini dilindungi oleh reCAPTCHA dan <a href="#" title=""
-                            class="text-blue-600 transition-all duration-200 hover:underline hover:text-blue-700">Kebijakan
-                            Privasi Google</a> &
-                        <a href="#" title=""
-                            class="text-blue-600 transition-all duration-200 hover:underline hover:text-blue-700">Persyaratan
-                            Layanan</a>
-                    </p>
                 </div>
             </div>
             <div
                 class="relative lg:flex hidden items-end px-4 pb-10 pt-60 sm:pb-16 md:justify-center lg:pb-24 bg-gray-50 sm:px-6 lg:px-8">
                 <div class="absolute inset-0">
                     <img class="object-cover w-full h-full"
-                        src="https://cdn.rareblocks.xyz/collection/celebration/images/signup/4/girl-working-on-laptop.jpg"
+                        src="{{asset('asset/WhatsApp Image 2024-03-09 at 16.15.49_7c27c75d.jpg')}}"
                         alt="" />
                 </div>
                 <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>

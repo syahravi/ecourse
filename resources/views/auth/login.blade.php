@@ -7,7 +7,7 @@
                 class="relative md:flex items-end  hidden px-4 pb-10 pt-60 sm:pb-16 md:justify-center lg:pb-24 bg-gray-50 sm:px-6 lg:px-7">
                 <div class="absolute inset-0">
                     <img class="object-cover object-top w-full h-full"
-                        src="https://cdn.rareblocks.xyz/collection/celebration/images/signin/4/girl-thinking.jpg"
+                        src="{{asset('asset/20220124-DSC08025.jpg')}}"
                         alt="" />
                 </div>
                 <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
@@ -93,41 +93,6 @@
                                 Masuk
                             </button>
                         </div>
-                </div>
-                <div class="mt-3 space-y-3">
-                    <a href="/auth/google" type="button"
-                        class="relative inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-gray-700 transition-all duration-200 bg-white border-2 border-gray-200 rounded-md hover:bg-gray-100 focus:bg-gray-100 hover:text-black focus:text-black focus:outline-none">
-                        <div class="absolute inset-y-0 left-0 p-4">
-                            <img src="{{ asset('asset/googleicon.svg') }}" alt="google icon" class="w-6 h-6">
-                        </div>
-                        Masuk dengan Google
-                    </a>
-                    <a href="/auth/facebook" type="button"
-                        class="relative inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-gray-700 transition-all duration-200 bg-white border-2 border-gray-200 rounded-md hover:bg-gray-100 focus:bg-gray-100 hover:text-black focus:text-black focus:outline-none">
-                        <div class="absolute inset-y-0 left-0 p-4">
-                            <svg class="w-6 h-6 text-[#2563EB]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z">
-                                </path>
-                            </svg>
-
-                        </div>
-                        Masuk dengan Facebook
-                    </a>
-                    <a href="/auth/github" type="button"
-                        class="relative inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-gray-700 transition-all duration-200 bg-white border-2 border-gray-200 rounded-md hover:bg-gray-100 focus:bg-gray-100 hover:text-black focus:text-black focus:outline-none">
-                        <div class="absolute inset-y-0 left-0 p-4">
-                            <svg class="w-6 h-6 text-[#333333]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path fill-rule="evenodd"
-                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.302 3.438 9.8 8.208 11.385.6.11.82-.26.82-.58 0-.29-.01-1.26-.01-2.29-3.002.65-3.891-.72-4.141-1.39-.141-.36-.76-1.39-1.3-1.67-.44-.28-1.06-.97-.01-.98.98-.01 1.68.9 1.92 1.3 1.13 1.87 2.93 1.35 3.64 1.03.11-.82.44-1.38.8-1.7-2.81-.32-5.75-1.41-5.75-6.28 0-1.39.49-2.52 1.3-3.41-.13-.33-.56-1.61.12-3.35 0 0 1.06-.34 3.5 1.3 1-.28 2.06-.42 3.12-.42 1.06 0 2.12.14 3.12.42 2.44-1.64 3.5-1.3 3.5-1.3.68 1.74.25 3.02.13 3.35.81.89 1.3 2.02 1.3 3.41 0 4.88-2.95 5.96-5.77 6.28.45.39.85 1.16.85 2.34 0 1.69-.01 3.05-.01 3.47 0 .32.22.7.83.58C20.565 21.797 24 17.287 24 12c0-6.63-5.37-12-12-12">
-                                </path>
-                            </svg>
-                        </div>
-                        Masuk dengan GitHub
-                    </a>
-
                 </div>
                 </form>
             </div>

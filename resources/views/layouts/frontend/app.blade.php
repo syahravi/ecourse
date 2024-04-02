@@ -22,13 +22,13 @@
             const loading = document.querySelector('.spinner-overlay');
 
             // Menampilkan spinner
-            loading.style.display = 'none';
+            loading.style.display = 'flex';
 
             // Timeout 2 detik
             setTimeout(function () {
                 // Menghentikan tampilan spinner setelah 2 detik
                 loading.style.display = 'none';
-            }, 2000);
+            }, 1000);
         });
     </script>
     <!-- Spinner -->
@@ -48,7 +48,7 @@
 
         .spinner {
             border: 8px solid #f3f3f3;
-            border-top: 8px solid #3498db;
+            border-top: 8px solid #14b8a6;
             border-radius: 50%;
             width: 50px;
             height: 50px;

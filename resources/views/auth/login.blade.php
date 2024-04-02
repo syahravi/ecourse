@@ -7,7 +7,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-md">
                 <div class="relative hidden lg:flex items-end px-4 pb-10 pt-60 sm:pb-16 lg:pb-24 bg-gray-50 sm:px-6 lg:px-7">
                     <div class="absolute inset-0 flex items-center justify-center">
-                        <img class="object-cover object-top w-full h-full max-w-lg" src="{{ asset('asset/login.svg') }}"
+                        <img class="object-cover rounded-r-lg object-top w-full h-full max-w-lg" src="{{ asset('asset/login.svg') }}"
                             alt="" />
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>

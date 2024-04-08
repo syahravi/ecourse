@@ -59,8 +59,8 @@
 @endsection
 
 @push('js')
-    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
-        data-client-key="{{ config('services.midtrans.serverKey') }}"></script>
+    <script type="text/javascript" src="{{ config('services.midtrans.snap_url') }}"
+        data-client-key="{{ config('services.midtrans.clientKey') }}"></script>
     <script type="text/javascript">
         var payButton = document.getElementById('pay-button');
         payButton.addEventListener('click', function() {

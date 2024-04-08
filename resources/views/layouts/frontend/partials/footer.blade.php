@@ -2,7 +2,7 @@
 
 
 
-<footer class="py-10 bg-white sm:pt-16 lg:pt-24">
+<footer class="py-10 bg-slate-50 sm:pt-16 lg:pt-24">
     <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-10 justify-items-center md:justify-items-start">
             <div class="col-span-2  xl:pr-8">

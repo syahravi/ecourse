@@ -123,7 +123,7 @@
                 </div>
                 <div class="relative lg:flex hidden items-end px-4 pb-10 pt-24 sm:pb-16 md:justify-center lg:pb-24 bg-gray-50 sm:px-6 lg:px-8">
                     <div class="absolute inset-0">
-                        <img class="object-cover w-full h-full" src="{{ asset('asset/register.svg') }}" alt="" />
+                        <img class="object-cover w-full h-full" src="{{ asset('asset/bellaregister.svg') }}" alt="" />
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
                 </div>

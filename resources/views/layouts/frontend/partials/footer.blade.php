@@ -6,7 +6,7 @@
     <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-10 justify-items-center md:justify-items-start">
             <div class="col-span-2  xl:pr-8">
-                <img class="w-auto flex justify-center md:justify-start h-9 md:h-14" src="{{asset('asset/logo1.png')}}"
+                <img class="w-auto hidden md:flex  md:justify-start h-9 md:h-14" src="{{asset('asset/logo1.png')}}"
                     alt="" />
 
                 <p class="text-base text-center md:text-left leading-relaxed text-gray-600 mt-7"> Jl. Taman Amir Hamzah No.5, RT.8/RW.4, Pegangsaan, Kec. Menteng, Kota Jakarta Pusat, Daerah Khusus

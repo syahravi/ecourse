@@ -28,12 +28,12 @@
                         <div id="question{{ $soal->soal }}"
                             class="question-container bg-white mb-4 p-6 {{ $soal->soal != 1 ? 'hidden' : '' }}">
                             <h1 class="mb-4 text-lg">{{ $soal->soal }}. {{ $soal->question }}</h1>
-                            <input type="hidden" name="exam_ids[]" value="{{ $soal->soal }}">
+                            <input type="hidden" name="exam_ids[]" value="{{ $soal->id }}">
                             <div class="mb-4">
                                 <div class="flex flex-col space-y-2">
                                     @foreach (range(1, 4) as $option)
                                         <label class="inline-flex items-center">
-                                            <input type="radio" name="answers[{{ $soal->soal }}]"
+                                            <input type="radio" name="answers[{{ $soal->id }}]"
                                                 value="{{ $option }}" class="form-radio">
                                             <span class="ml-2">{{ $soal->{'option' . $option} }}</span>
                                         </label>
@@ -132,11 +132,6 @@
                 $('[data-soal]').each(function() {
                     var soal = $(this).data('soal');
                     var isAnswered = $('input[name="answers[' + soal + ']"]:checked').length > 0;
-                    if (isAnswered) {
-                        $(this).removeClass('bg-white text-black').addClass('bg-teal-500 text-white');
-                    } else {
-                        $(this).removeClass('bg-teal-500 ').addClass('bg-white');
-                    }
                 });
             }
 

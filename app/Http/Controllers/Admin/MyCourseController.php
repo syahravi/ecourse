@@ -43,6 +43,6 @@ class MyCourseController extends Controller
             }
         }
         
-        return view('Admin.course.mycourse', compact('courses'));
+        return view('admin.course.mycourse', compact('courses'));
     }
 }

@@ -2,14 +2,14 @@
     <div class="px-4 mx-auto sm:px-6 lg:px-8">
         <div class="flex items-center justify-around ">
             <ul class="flex justify-start items-center  gap-5">
-                <li>
+       
                     <li >
                         <a href="/" class="flex items-center text-lg text-slate-700 font-semibold">
                             <img src="{{ asset('asset/logo1.png') }}" alt="unusia course" class="w-24 lg:w-32  h-auto">
     
                         </a>
                     </li>
-                </li>
+                
             </ul>
             <!-- NavMenu -->
             <ul class="flex justify-center items-center  gap-7">

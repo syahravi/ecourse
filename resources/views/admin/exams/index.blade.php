@@ -1,32 +1,36 @@
-@extends('layouts.backend.app', ['title' => 'Video'])
+@extends('layouts.backend.app', ['title' => 'ujian'])
 
 @section('content')
-    <h1>Daftar Ujian</h1>
-    <a href="{{ route('admin.exams.create', $course->slug) }}" class="btn btn-primary mb-3">Buat Ujian Baru</a>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Pertanyaan</th>
-                <th>No.Soal</th> <!-- Mengubah label menjadi No.Soal -->
-                <th>Jawaban</th> <!-- Mengubah label menjadi Jawaban -->
-                <th>Aksi</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($exams as $exam)
+    <a href="{{ route('admin.course.index') }}" class="btn btn-danger mb-3">
+        <i class="fas fa-arrow-left mr-1"></i> GO BACK
+    </a>
+    <x-button-create title="ADD NEW SOAL" :url="route('admin.exams.create', $course->slug)" />
+
+    <x-card title="LIST SOAL - {{ $course->name }}">
+        <table class="table table-striped">
+            <thead>
                 <tr>
-                    <td>{{ $loop->iteration }}</td>
-                    <td>{{ $exam->question }}</td>
-                    <td>{{ $exam->soal }}</td> <!-- Menggunakan colom soal_number untuk menampilkan nomor soal -->
-                    <td>{{ $exam->correct_answer }}</td> <!-- Menggunakan colom yang sesuai untuk menampilkan jawaban -->
-                    <td>
-                        <x-button-edit :url="route('admin.exams.edit', [$course->slug, $exam->id])" class="btn btn-sm btn-primary">Edit</x-button-edit>
-                        <x-button-delete :id="$exam->id" :url="route('admin.exams.destroy', $exam->id)" class="sm:mr-2" />
-                            <x-button-edit :url="route('admin.exams.show', [$course->slug, $exam->id])" class="btn btn-sm btn-primary">show</x-button-edit>
-                    </td>
+                    <th>NO.SOAL</th>
+                    <th>PERTAYAAN</th>
+                    <th>JAWABAN</th>
+                    <th>ACTION</th>
                 </tr>
-            @endforeach
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach ($exams as $exam)
+                    <tr>
+                        <td>{{ $exam->soal }}</td>
+                        <td>{{ $exam->question }}</td>
+                        <td>{{ $exam->correct_answer }}</td>
+
+
+                        <td>
+                            <x-button-edit :url="route('admin.exams.edit', [$course->slug, $exam->id])" class="sm:mr-2" />
+                            <x-button-delete :id="$exam->id" :url="route('admin.exams.destroy', $exam->id)" class="sm:mr-2" />
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </x-card>
 @endsection

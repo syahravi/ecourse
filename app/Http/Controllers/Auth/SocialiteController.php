@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 use Exception;
+use Spatie\Permission\Models\Role; // Import Role dari Spatie
 
 class SocialiteController extends Controller
 {
@@ -66,6 +67,14 @@ class SocialiteController extends Controller
                     'name'  => $socialUser->getName(),
                     'email' => $socialUser->getEmail(),
                 ]);
+
+                // Setelah membuat pengguna baru, tambahkan peran ke pengguna
+                $user->assignRole('member');
+            } else {
+                // Jika pengguna sudah ada, pastikan peran ditambahkan jika belum ada
+                if (!$user->hasRole('member')) {
+                    $user->assignRole('member');
+                }
             }
 
             $user->socialAccounts()->create([

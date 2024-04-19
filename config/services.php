@@ -31,11 +31,13 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
     'midtrans' => [
+        'merchant_id'     => env('MIDTRANS_MERCHANT_ID'),
         'serverKey'     => env('MIDTRANS_SERVERKEY'),
         'clientKey'     => env('MIDTRANS_CLIENTKEY'),
         'isProduction'  => env('MIDTRANS_IS_PRODUCTION', true),
         'isSanitized'   => env('MIDTRANS_IS_SANITIZED', true),
         'is3ds'         => env('MIDTRANS_IS_3DS', true),
+        'snap_url'  => env('MIDTRANS_SNAP_URL'),
     ],
     'github' => [
         'client_id' => env('GITHUB_CLIENT_ID'),

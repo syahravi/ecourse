@@ -9,7 +9,7 @@
         }
 
         body {
-            background-image: url('{{ asset('sertifikat/sertifikat kompetensi.png') }}');
+            background-image: url('{{ secure_asset('sertifikat/sertifikat33.png') }}');
             background-size: cover;
             background-repeat: no-repeat;
             padding: 1in;
@@ -17,7 +17,7 @@
 
         .certificate-info {
             position: absolute;
-            top: 53%;
+            top: 60%;
             left: 63%;
             transform: translate(-50%, -50%);
             text-align: center;
@@ -32,8 +32,8 @@
         }
         .certificate-course {
             position: absolute;
-            top: 64%;
-            left: 64%;
+            top: 72%;
+            left: 65%;
             transform: translate(-50%, -50%);
             text-align: center;
             color: #035657;
@@ -46,8 +46,8 @@
         }
         .certificate-date {
             position: absolute;
-            top: 70%;
-            left: 45%;
+            top: 77%;
+            left: 44%;
             transform: translate(-50%, -50%);
             text-align: center;
             color: #035657;

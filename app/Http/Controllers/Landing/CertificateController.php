@@ -41,7 +41,7 @@ class CertificateController extends Controller
             abort(404);
         }
 
-        return view('Landing.certificates.show', [
+        return view('landing.certificates.show', [
             'certificate' => $certificate,
             'user' => $userModel->name,
             'courseName' => $course->name,

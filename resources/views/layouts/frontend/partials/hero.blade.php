@@ -1,10 +1,9 @@
-<section class="bg-[#FCF8F1] bg-opacity-30 py-9 sm:py-16 lg:py-1">
-
+<section class="bg-white bg-opacity-30 py-9 sm:py-16 lg:py-1 dark:bg-slate-800 ">
     <div class="px-4 mx-auto max-w-7xl lg:mt-0 sm:px-6 lg:px-8">
         <div class="max-w-screen-2xl mt-10 md:mt-0">
             <div class="grid items-center grid-cols-1 lg:grid-cols-2 gap-12">
                 <div class="lg:order-first">
-                    <h1 class="mt-4 text-3xl text-center lg:text-left font-extrabold text-black lg:text-5xl xl:text-7xl">
+                    <h1 class="mt-4 text-3xl text-center lg:text-left font-extrabold text-black lg:text-5xl xl:text-7xl dark:text-white">
                         Mulai Bangun Karier Kamu Di Bidang<span class="text-teal-500 rounded font-bold">
                             <div
                                 class="font-extrabold text-3xl md:text-4xl [text-wrap:balance] bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 to-50% to-slate-200">
@@ -20,7 +19,7 @@
                                     </ul>
                                 </span></div>
                     </h1>
-                    <p class="mt-4 text-base text-center lg:text-left text-black lg:mt-8 sm:text-xl">Temukan potensi
+                    <p class="mt-4 text-base text-center lg:text-left text-black lg:mt-8 sm:text-xl dark:text-white">Temukan potensi
                         Anda
                         dengan akses tak terbatas ke kursus-kursus <span
                             class="bg-teal-500 text-white px-2 py-1 rounded font-bold">unusia</span> yang terbaik.</p>

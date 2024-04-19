@@ -1,12 +1,12 @@
 @extends('layouts.frontend.app', ['title' => 'Course Detail'])
 
 @section('content')
-    <div class="w-full bg-slate-700 md:py-28 p-5 md:p-20">
+    <div class="w-full dark:text-white  dark:bg-slate-800 md:py-28 p-5 md:p-20">
         <div class="container mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-4 md:gap-20">
                 <div class="md:col-span-2">
                     <div class="flex flex-row gap-4 text-xs justify-center md:justify-start mt-4">
-                        <div class="text-slate-400 flex items-center gap-2">
+                        <div class=" flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list w-5 h-5"
                                 width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
                                 fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -20,7 +20,7 @@
                             </svg>
                             {{ $course->videos()->count() }} Episode
                         </div>
-                        <div class="text-slate-400 flex items-center gap-2 ">
+                        <div class=" flex items-center gap-2 ">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users w-5 h-5"
                                 width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
                                 fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -32,7 +32,7 @@
                             </svg>
                             {{ $enrolled }} Member
                         </div>
-                        <div class="text-slate-400 flex items-center gap-2">
+                        <div class=" flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message-2 w-5 h-5"
                                 width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
                                 fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -45,10 +45,10 @@
                             </svg> {{ $course->reviews()->count() }} Review
                         </div>
                     </div>
-                    <h1 class="text-lg font-semibold lg:text-2xl py-4 text-white text-center md:text-start">
+                    <h1 class="text-lg font-semibold lg:text-2xl py-4  text-center md:text-start">
                         {{ $course->name }}
                     </h1>
-                    <p class="text-sm text-center md:text-base md:text-justify text-gray-400">{{ $course->description }}
+                    <p class="text-sm text-center md:text-base md:text-justify ">{{ $course->description }}
                     </p>
                     <div class="mt-5">
                         <h1 class="text-3xl md:text-6xl text-green-500 font-mono text-center md:text-start">
@@ -111,23 +111,23 @@
             </div>
         </div>
     </div>
-    <div class="w-full bg-white">
+    <div class="w-full dark:bg-slate-600">
         <div class="container mx-auto p-4">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
                 <div class="col-span-12 md:col-span-12">
                     <div class="p-4">
                         <div class="flex flex-col gap-2 mb-3">
-                            <h1 class="font-semibold text-base md:text-lg text-gray-700">
+                            <h1 class="font-semibold text-base md:text-lg dark:text-white ">
                                 DAFTAR EPISODE
                             </h1>
-                            <p class="text-xs text-gray-500">
+                            <p class="text-xs dark:text-white ">
                                 {{ $course->videos->count() }} episode siap untuk dipelajari, jadi bersiaplah untuk mulai
                                 sekarang.
                             </p>
                         </div>
                         @foreach ($videos as $video)
-                            <div class="border-b p-4 text-gray-500">
-                                <div class="flex justify-between">
+                            <div class="border-b p-4 ">
+                                <div class="flex justify-between dark:text-white">
                                     <a href="{{ route('course.video', [$course->slug, $video->episode]) }}"
                                         class="flex flex-row items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg"
@@ -138,7 +138,7 @@
                                             <polyline points="7 7 12 12 7 17"></polyline>
                                             <polyline points="13 7 18 12 13 17"></polyline>
                                         </svg>
-                                        <p class="text-xs md:text-sm ml-2 hover:text-red-500">{{ $video->episode }}.
+                                        <p class=" text-xs md:text-sm ml-2 hover:text-red-500 transition-colors duration-300">{{ $video->episode }}.
                                             {{ $video->name }}</p>
                                     </a>
                                     <div class="text-xs md:text-sm">
@@ -205,11 +205,11 @@
                 </div>
             </div>
         </div>
-        <div id="review" class="w-full bg-gray-800 border-t border-b p-5 md:p-20 border-dashed border-slate-700">
+        <div id="review" class="w-full dark:bg-gray-800 border-t border-b p-5 md:p-20 border-dashed border-slate-700">
             <div class="container mx-auto">
                 <div class="p-4">
                     <div class="flex flex-col gap-2 text-center items-center mb-10">
-                        <h1 class="text-2xl text-white font-semibold">Review</h1>
+                        <h1 class="text-2xl dark:text-white font-semibold">Review</h1>
                         <p class="text-sm text-gray-400 lg:mx-96">
                             Kumpulan review dari para member yang telah membeli course ini
                         </p>
@@ -217,7 +217,7 @@
                     </div>
                     <div class="flex flex-row overflow-x-auto md:grid md:grid-cols-3 gap-4 items-start">
                         @foreach ($reviews as $review)
-                            <div class="min-w-full bg-slate-800 rounded-lg border border-slate-600">
+                            <div class="min-w-full bg-slate-600 rounded-lg border border-slate-300">
                                 <div class="flex justify-between p-4">
                                     <div class="flex space-x-4">
                                         <div>

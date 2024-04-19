@@ -24,7 +24,8 @@ class CreateNewUser implements CreatesNewUsers
      */
     public function create(array $input)
     {
-        Validator::make($input, [
+        // Validasi input pengguna
+        $validator = Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
             'email' => [
                 'required',
@@ -34,22 +35,41 @@ class CreateNewUser implements CreatesNewUsers
                 Rule::unique(User::class),
             ],
             'password' => $this->passwordRules(),
-        ])->validate();
+        ]);
 
-        $role = Role::where('name', 'member')->first();
+        // Jika validasi gagal, kembalikan pesan kesalahan
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
 
+        // Buat token verifikasi email
+        $emailVerificationToken = Str::random(64);
+
+        // Buat pengguna baru dengan status verifikasi email false
         $user = User::create([
             'name' => $input['name'],
-            'username' => $input['name'] .'-'. Str::random(6),
+            'username' => $input['name'] . '-' . Str::random(6),
             'email' => $input['email'],
+            'email_verified_at' => null, // Set email_verified_at menjadi null
+            'email_verification_token' => $emailVerificationToken, // Simpan token verifikasi email
             'password' => Hash::make($input['password']),
         ]);
 
+        // Kirim email verifikasi
+        $user->sendEmailVerificationNotification();
+
+        // Jangan tambahkan pengguna ke basis data sampai mereka diverifikasi
+        // Data pengguna akan dimasukkan ke basis data oleh Laravel setelah verifikasi email berhasil
+
+        // Tetapkan peran "member" kepada pengguna baru
+        $role = Role::where('name', 'member')->first();
         $user->assignRole($role);
 
-        $admin = User::role('admin')->get();
+        // Dapatkan semua pengguna yang memiliki peran "admin"
+        $admins = User::role('admin')->get();
 
-        Notification::send($admin, new NewMember($user));
+        // Kirim notifikasi kepada semua pengguna yang memiliki peran "admin" bahwa ada anggota baru yang terdaftar
+        Notification::send($admins, new NewMember($user));
 
         return $user;
     }

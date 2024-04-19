@@ -1,7 +1,7 @@
 @extends('layouts.frontend.app', ['title' => 'Course'])
 
 @section('content')
-    <div id="default-carousel" class="relative w-full h-full pt-7 md:pt-24" data-carousel="slide">
+    <div id="default-carousel" class="relative w-full h-full pt-7 md:pt-24 dark:bg-slate-800" data-carousel="slide">
         <!-- Carousel wrapper -->
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
             <!-- Item 1 -->
@@ -35,7 +35,7 @@
             data-carousel-prev>
             <span
                 class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                <svg class="w-4 h-4 dark:text-white text-gray-800 rtl:rotate-180" aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M5 1 1 5l4 4" />
@@ -48,7 +48,7 @@
             data-carousel-next>
             <span
                 class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                <svg class="w-4 h-4 dark:text-white text-gray-800 rtl:rotate-180" aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="m1 9 4-4-4-4" />
@@ -59,10 +59,11 @@
     </div>
     <!-- search section -->
     <x-landing.search-section :url="route('course.index')" />
+    
     <!-- course section -->
-    <div class="py-10 overflow-hidden  sm:py-16 lg:py-14 ">
+    <div class="py-10 overflow-hidden  sm:py-16 lg:py-14 dark:bg-slate-800 ">
         <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl py-2">
-            <h2 class="text-2xl font-bold text-center leading-tight text-black sm:text-3xl lg:text-4xl">Course Yang Tersedia</h2>
+            <h2 class="text-2xl font-bold text-center leading-tight text-black sm:text-3xl lg:text-4xl dark:text-white">Course Yang Tersedia</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 container mx-auto my-5 items-start">
                 @foreach ($courses as $course)
                     <x-landing.course-item :course="$course" />

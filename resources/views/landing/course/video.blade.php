@@ -1,23 +1,24 @@
-@extends('layouts.auth.app', ['title' => 'Homepage'])
+@extends('layouts.kelas.app', ['title' => 'Homepage'])
 
 @section('content')
     <!-- Main Content -->
-    <div class="w-full  p-5 md:p-20">
+    <div class="w-full h-full pt-20 md:pt-24 md:pb-36 dark:bg-slate-800">
         <div class="container mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-12">
                 <!-- Video Content -->
-                <div class="col-span-12  md:ml-52 ">
+                <div class="col-span-12 md:ml-64 ">
                     @php
                         $totalEpisodes = count($videos);
                     @endphp
-                    <div class="w-auto h-56 md:h-96 border rounded-lg relative">
+                    <div class=" w-auto md:w-full h-56 md:h-96 rounded-lg relative">
                         <iframe src="https://www.youtube.com/embed/{{ $video->video_code }}" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen class="rounded-lg w-full h-full"></iframe>
                     </div>
-                    <div class="mt-2 text-xs md:text-sm ">
+                    <div class="mt-2 text-xs md:text-sm dark:text-white whitespace-pre-wrap">
                         {!! $video->teori !!}
                     </div>
+                    
                     <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar"
                         aria-controls="default-sidebar" type="button"
                         class="absolute bottom-0 top-0 left-0 p-2 mt-2 mr-3 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
@@ -102,12 +103,12 @@
                 <aside id="default-sidebar"
                     class="fixed top-0 left-0  z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
                     aria-label="Sidebar">
-                    <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+                    <div class="h-full px-3 py-24 overflow-y-auto bg-gray-50 dark:bg-slate-800">
                         <ul class="space-y-2 font-medium">
                             <li>
                                 <p
                                     class="flex flex-col items-center p-2 pt-2 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                                    <span class="mb-1  text-md text-black font-bold">Daftar Modul</span>
+                                    <span class="mb-1  text-md  font-bold">Daftar Modul</span>
                                     <span class="text-sm">Total Episodes {{ $course->videos->count() }}</span>
                                 </p>
                                 <div class="flex items-center justify-center text-xs text-yellow-500 gap-1">
@@ -127,7 +128,7 @@
                                 @foreach ($videos as $video)
                                     <a href="{{ route('course.video', [$course->slug, $video->episode]) }}"
                                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group {{ videoActive($video->episode) }}">
-                                        <span class="flex-1 ms-3 whitespace-nowrap text-sm"> {{ $video->episode }}.
+                                        <span class="flex-1 ms-3 whitespace-nowrap text-sm overflow-x-hidden"> {{ $video->episode }}.
                                             {{ $video->name }}</span>
                                     </a>
                                 @endforeach

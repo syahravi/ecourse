@@ -2,7 +2,7 @@
 
 @section('content')
     @include('layouts.frontend.partials.hero')
-    <section class="relative font-inter antialiased">
+    <section class="relative font-inter antialiased dark:bg-slate-800">
 
         <div class="relative  flex flex-col justify-center  overflow-hidden">
             <div class="w-full mx-auto px-4 ">
@@ -57,18 +57,18 @@
         </div>
     
     </section>
-    <aside class=" mt-12 md:mt-20 text-black p-6">
+    <aside class="  text-black p-6 dark:bg-slate-800 dark:text-white">
         <div class="flex flex-col gap-4 items-center mt-8">
-            <h1 class="text-3xl font-semibold">DAFTAR COURSE</h1>
-            <p class="text-sm text-black  lg:mx-auto text-center md:text-left">
+            <h1 class="text-3xl font-semibold ">DAFTAR COURSE</h1>
+            <p class="text-sm text-black  lg:mx-auto text-center md:text-left dark:text-white">
                 Kami menyediakan berbagai macam pembahasan dengan studi kasus yang dapat membantu menjadi seorang
                 .
             </p>
-            <div class="w-20 bg-teal-800 h-1 mt-2"></div>
+            <div class="w-20 bg-teal-800 h-1 mt-2 dark:bg-teal-500"></div>
         </div>
     </aside>
 
-    <section class="py-10 overflow-hidden  sm:py-16 lg:py-14">
+    <section class="py-10 overflow-hidden  sm:py-16 lg:py-14 dark:bg-slate-800">
         <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl py-2">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                 @foreach ($courses->take(4) as $course)
@@ -92,7 +92,7 @@
             </a>
         </div>
     </section>
-    <div class="bg-teal-50 ">
+    <div class="bg-teal-50 dark:bg-slate-800 ">
         <section class="pt-10 sm:pt-16 lg:pt-20">
             <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
@@ -100,17 +100,17 @@
                         <img class="w-full" src="{{ asset('asset/bella.png') }}" alt="" />
                     </div>
                     <div>
-                        <h1 class="text-4xl font-bold text-black sm:text-6xl lg:text-7xl">
+                        <h1 class="text-4xl font-bold text-black sm:text-6xl lg:text-7xl dark:text-white">
                             Tunggu Apa Lagi ?
                         </h1>
 
-                        <p class="mt-8 text-base text-black sm:text-xl">Belajar lebih terarah dan sistematis dengan materi
+                        <p class="mt-8 text-base text-black sm:text-xl dark:text-white">Belajar lebih terarah dan sistematis dengan materi
                             berkualitas tinggi beserta pendampingan mentoring secara
                             intensif.</p>
 
                         <div class="mt-10 block md:flex md:flex-row justify-center md:justify-start sm:space-x-8">
                             <a href="{{ route('register') }}" title=""
-                                class="flex justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 bg-teal-500 hover:bg-teal-600 focus:bg-teal-600"
+                                class="flex justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 bg-teal-500 hover:bg-teal-600 focus:bg-teal-600 dark:text-white"
                                 role="button">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus"
                                     width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
@@ -131,32 +131,32 @@
             </div>
         </section>
     </div>
-    <div class="bg-white">
+    <div class="bg-white dark:bg-slate-800">
         <section class="py-10 sm:py-16 lg:py-24">
             <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 gap-12 lg:grid-cols-2">
+                <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 ">
                     <div>
                         <div>
-                            <h3 class=" text-2xl lg:text-4xl font-extrabold">Unu Course Telah Berdampak Positif Mencetak
+                            <h3 class=" text-2xl lg:text-4xl font-extrabold dark:text-white">Unu Course Telah Berdampak Positif Mencetak
                                 Kelas Digital Indonesia</h3>
                         </div>
-                        <div class="flex justify-center mt-14 lg:mt-24">
+                        <div class="flex justify-center mt-14 lg:mt-24 ">
                             <div class="grid grid-cols-2 gap-20">
                                 <div class="flex flex-col items-center justify-center">
-                                    <dt class="mb-2 text-3xl font-extrabold">{{ $courseCount }}</dt>
-                                    <dd class="text-gray-500 dark:text-gray-400">Kelas</dd>
+                                    <dt class="mb-2 text-3xl font-extrabold dark:text-white">{{ $courseCount }}</dt>
+                                    <dd class="text-gray-500 dark:text-white">Kelas</dd>
                                 </div>
                                 <div class="flex flex-col items-center justify-center">
-                                    <dt class="mb-2 text-3xl font-extrabold">{{ $categoryCount }}</dt>
-                                    <dd class="text-gray-500 dark:text-gray-400">Categories</dd>
+                                    <dt class="mb-2 text-3xl font-extrabold dark:text-white">{{ $categoryCount }}</dt>
+                                    <dd class="text-gray-500 dark:text-white">Categories</dd>
                                 </div>
                                 <div class="flex flex-col items-center justify-center">
-                                    <dt class="mb-2 text-3xl font-extrabold">{{ $showcaseCount }}</dt>
-                                    <dd class="text-gray-500 dark:text-gray-400">Portofolio</dd>
+                                    <dt class="mb-2 text-3xl font-extrabold dark:text-white">{{ $showcaseCount }}</dt>
+                                    <dd class="text-gray-500 dark:text-white">Portofolio</dd>
                                 </div>
                                 <div class="flex flex-col items-center justify-center">
-                                    <dt class="mb-2 text-3xl font-extrabold">{{ $authorCount }}</dt>
-                                    <dd class="text-gray-500 dark:text-gray-400">Mentor</dd>
+                                    <dt class="mb-2 text-3xl font-extrabold dark:text-white">{{ $authorCount }}</dt>
+                                    <dd class="text-gray-500 dark:text-white">Mentor</dd>
                                 </div>
                                 <div class=" block md:flex justify-center col-span-2 gap-6">
                                     <a href="{{ route('course.index') }}" type="button"
@@ -172,7 +172,7 @@
                     </div>
                     <div>
                         <div class="my-3 md:my-1">
-                            <p class=" text-base lg:text-lg text-start lg:text-end">Unu Course adalah platform pendidikan
+                            <p class=" text-base lg:text-lg text-start lg:text-end dark:text-white">Unu Course adalah platform pendidikan
                                 teknologi yang menyediakan konten pembelajaran keterampilan digital secara daring,
                                 memungkinkan akses di mana saja.</p>
                         </div>

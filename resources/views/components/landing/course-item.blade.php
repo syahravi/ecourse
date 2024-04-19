@@ -1,6 +1,6 @@
 @props(['course'])
 
-<a href="{{ route('course.show', $course->slug) }}" class="max-w-sm rounded overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105">
+<a href="{{ route('course.show', $course->slug) }}" class="max-w-sm rounded overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105 dark:bg-white">
     <img class="w-full rounded-t-lg object-cover h-44 sm:h-48 md:h-56" src="{{ $course->image }}" alt="{{ $course->name }}">
     <div class="px-6 py-4">
         <h1 class="font-bold text-lg sm:text-xl mb-2 text-black hover:underline">

@@ -35,45 +35,56 @@ use App\Http\Controllers\Member\TransactionController as MemberTransactionContro
 
 use App\Http\Controllers\Auth\SocialiteController;
 
+
 Route::get('/auth/{provider}', [SocialiteController::class, 'redirectToProvider']);
 Route::get('/auth/{provider}/callback', [SocialiteController::class, 'handleProviderCallback']);
 Route::fallback(function () {
     return view('errors-404');
 });
 
-// home route
-Route::get('/', HomeController::class)->name('home');
-Route::view('/tim', 'landing.tim')->name('tim');
-// Route::view('/tiket', 'pages.tiket')->name('tiket');
-Route::view('/faq', 'landing.faq')->name('faq');
-Route::view('/tentang', 'landing.tentang')->name('tentang');
+
+Route::get('/', [HomeController::class, '__invoke'])
+    ->name('home')
+    ->middleware('verified');
+
+
+Route::view('/tim', 'landing.tim')->name('tim')->middleware('verified');
+
+Route::view('/faq', 'landing.faq')->name('faq')->middleware('verified');
+
+Route::view('/tentang', 'landing.tentang')->name('tentang')->middleware('verified');
 // course route
-Route::controller(LandingCourseController::class)
-    ->as('course.')
-    ->group(function () {
-        Route::get('/course', 'index')->name('index');
-        Route::get('/course/{course:slug}/detail', 'show')->name('show');
-        Route::get('/course/{course:slug}/pertemuan/{video:episode}', 'video')->name('video');
-    });
-Route::get('/certificates/{user}/{course}/{serialNumber}', [LandingCertificateController::class, 'show'])->name('Landing.certificates.show');
+Route::middleware('verified')->group(function () {
+    Route::controller(LandingCourseController::class)
+        ->as('course.')
+        ->group(function () {
+            Route::get('/course', 'index')->name('index');
+            Route::get('/course/{course:slug}/detail', 'show')->name('show');
+            Route::get('/course/{course:slug}/pertemuan/{video:episode}', 'video')->name('video');
+        });
+});
+Route::middleware('verified')->group(function () {
+    Route::get('/certificates/{user}/{course}/{serialNumber}', [LandingCertificateController::class, 'show'])->name('Landing.certificates.show');
 
-Route::get('/certificates/{user}/{course}/{serialNumber}/Sertificates Unusia Course', [LandingCertificateController::class, 'generatePDF'])->name('Landing.certificates.pdf');
+    Route::get('/certificates/{user}/{course}/{serialNumber}/Sertificates Unusia Course', [LandingCertificateController::class, 'generatePDF'])->name('Landing.certificates.pdf');
+});
 
-Route::controller(LandingExamController::class)
-    ->as('exams.') // Prefix nama rute yang benar
-    ->group(function () {
-        Route::get('/course/{course:slug}/soal', 'exam')->name('exam');
-        Route::get('/course/{course:slug}/exam/detail', 'examDetail')->name('examDetail');
-        Route::post('/course/{course:slug}/submit-exam', 'submitExam')->name('submitExam');
-    });
+Route::middleware('verified')->group(function () {
+    Route::controller(LandingExamController::class)
+        ->as('exams.') // Prefix nama rute yang benar
+        ->group(function () {
+            Route::get('/course/{course:slug}/soal', 'exam')->name('exam');
+            Route::get('/course/{course:slug}/exam/detail', 'examDetail')->name('examDetail');
+            Route::post('/course/{course:slug}/submit-exam', 'submitExam')->name('submitExam');
+        });
+});
 
-// category route
-Route::get('/category/{category:slug}', LandingCategoryController::class)->name('category');
-// review route
-Route::get('/review', LandingReviewController::class)->name('review');
-// showcase route
-Route::get('/showcase', LandingShowcaseController::class)->name('showcase');
-// cart route
+Route::middleware(['verified'])->group(function () {
+    Route::get('/category/{category:slug}', LandingCategoryController::class)->name('category');
+    Route::get('/review', LandingReviewController::class)->name('review');
+    Route::get('/showcase', LandingShowcaseController::class)->name('showcase');
+});
+
 Route::controller(CartController::class)
     ->middleware('auth')
     ->as('cart.')
@@ -86,7 +97,7 @@ Route::controller(CartController::class)
 Route::get('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
 
 // admin route
-Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function () {
+Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth', 'role:admin', 'verified']], function () {
     // admin dashboard route
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
 
@@ -152,7 +163,7 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['auth', 'r
 });
 
 // member route
-Route::group(['as' => 'member.', 'prefix' => 'account', 'middleware' => ['auth', 'role:member|author']], function () {
+Route::group(['as' => 'member.', 'prefix' => 'account', 'middleware' => ['auth', 'role:member|author', 'verified']], function () {
     // member dashboard route
     Route::get('/dashboard', MemberDashboardController::class)->name('dashboard');
     // member course route

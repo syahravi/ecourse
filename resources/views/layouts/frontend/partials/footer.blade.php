@@ -2,61 +2,61 @@
 
 
 
-<footer class="py-10 bg-slate-50 sm:pt-16 lg:pt-24">
+<footer class="py-10 bg-slate-50 sm:pt-16 lg:pt-24 dark:bg-slate-700">
     <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-10 justify-items-center md:justify-items-start">
             <div class="col-span-2  xl:pr-8">
                 <img class="w-auto hidden md:flex  md:justify-start h-9 md:h-14" src="{{asset('asset/logo1.png')}}"
                     alt="" />
 
-                <p class="text-base text-center md:text-left leading-relaxed text-gray-600 mt-7"> Jl. Taman Amir Hamzah No.5, RT.8/RW.4, Pegangsaan, Kec. Menteng, Kota Jakarta Pusat, Daerah Khusus
+                <p class="text-base text-center md:text-left leading-relaxed text-gray-600 mt-7 dark:text-white"> Jl. Taman Amir Hamzah No.5, RT.8/RW.4, Pegangsaan, Kec. Menteng, Kota Jakarta Pusat, Daerah Khusus
                     Ibukota Jakarta 10320.</p>
             </div>
 
             <div class="">
-                <p class="text-base font-semibold text-gray-900">Informasi</p>
+                <p class="text-base font-semibold text-gray-900 dark:text-white">Informasi</p>
 
                 <ul class="mt-6 space-y-5">
                     <li>
                         <a href="{{ route('tentang') }}" title=""
-                            class="flex text-sm text-gray-800 transition-all duration-200 hover:text-teal-600 focus:text-teal-600">
+                            class="flex text-sm text-gray-800 transition-all duration-200 hover:text-teal-600 focus:text-teal-600 dark:text-white">
                             Tentang Kami </a>
                         </a>
                     </li>
 
                     <li>
                         <a href="{{ route('faq') }}" title=""
-                            class="flex text-sm text-gray-800 transition-all duration-200 hover:text-teal-600 focus:text-teal-600">
+                            class="flex text-sm text-gray-800 transition-all duration-200 hover:text-teal-600 focus:text-teal-600 dark:text-white">
                             FAQ </a>
                     </li>
 
                     <li>
                         <a href="{{ route('tim') }}" title=""
-                            class="flex text-sm text-gray-800 transition-all duration-200 hover:text-teal-600 focus:text-teal-600">
+                            class="flex text-sm text-gray-800 transition-all duration-200 hover:text-teal-600 focus:text-teal-600 dark:text-white">
                             Team </a>
                     </li>
                 </ul>
             </div>
 
             <div >
-                <p class="text-base font-semibold text-gray-900">Komunitas</p>
+                <p class="text-base font-semibold text-gray-900 dark:text-white">Komunitas</p>
 
                 <ul class="mt-6 space-y-4">
                     <li>
                         <a href="{{ route('review') }}" title=""
-                            class="flex text-sm text-gray-800 transition-all duration-200 hover:text-teal-600 focus:text-teal-600">
+                            class="flex text-sm text-gray-800 transition-all duration-200 hover:text-teal-600 focus:text-teal-600 dark:text-white">
                             Ulasan Member </a>
                     </li>
 
                     <li>
                         <a href="https://t.me/+z4Bf1UgLJZZlYTI9" title=""
-                            class="flex text-sm text-gray-800 transition-all duration-200 hover:text-teal-600 focus:text-teal-600">
+                            class="flex text-sm text-gray-800 transition-all duration-200 hover:text-teal-600 focus:text-teal-600 dark:text-white">
                             Grup Telegram </a>
                     </li>
 
                     <li>
                         <a href="https://discord.com/invite/hsASa2uV" title=""
-                            class="flex text-sm text-gray-800 transition-all duration-200 hover:text-teal-600 focus:text-teal-600">
+                            class="flex text-sm text-gray-800 transition-all duration-200 hover:text-teal-600 focus:text-teal-600 dark:text-white">
                             Discord </a>
                     </li>
                 </ul>
@@ -65,13 +65,13 @@
 
         <hr class="mt-16 mb-10 border-gray-200" />
 
-        <div class="sm:flex sm:items-center sm:justify-between">
-            <p class="text-sm text-gray-600"> © E-course Unusia {{ date('Y') }}</p>
+        <div class="sm:flex sm:items-center sm:justify-between dark:text-white">
+            <p class="text-sm text-gray-600 dark:text-white"> © E-course Unusia {{ date('Y') }}</p>
 
-            <ul class="flex items-center mt-5 space-x-3 md:order-3 sm:mt-0">
+            <ul class="flex items-center mt-5 space-x-3 md:order-3 sm:mt-0 ">
                 <li>
                     <a href="https://twitter.com/SaefulMuminin7" title=""
-                        class="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-teal-600 hover:text-white focus:text-white hover:bg-teal-600 hover:border-teal-600 focus:border-teal-600">
+                        class="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-teal-600 hover:text-white focus:text-white hover:bg-teal-600 hover:border-teal-600 focus:border-teal-600  dark:text-white">
                         <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                             fill="currentColor">
                             <path
@@ -83,7 +83,7 @@
 
                 <li>
                     <a href="https://web.facebook.com/saeful.m.73744?locale=id_ID" title=""
-                        class="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-teal-600 hover:text-white focus:text-white hover:bg-teal-600 hover:border-teal-600 focus:border-teal-600">
+                        class="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-teal-600 hover:text-white focus:text-white hover:bg-teal-600 hover:border-teal-600 focus:border-teal-600 dark:text-white">
                         <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                             fill="currentColor">
                             <path
@@ -95,7 +95,7 @@
 
                 <li>
                     <a href="https://www.instagram.com/saeful.m.73744/" title=""
-                        class="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-teal-600 hover:text-white focus:text-white hover:bg-teal-600 hover:border-teal-600 focus:border-teal-600">
+                        class="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-teal-600 hover:text-white focus:text-white hover:bg-teal-600 hover:border-teal-600 focus:border-teal-600 dark:text-white">
                         <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                             fill="currentColor">
                             <path
@@ -111,7 +111,7 @@
 
                 <li>
                     <a href="https://github.com/saefulmuminin?tab=repositories" title=""
-                        class="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-teal-600 hover:text-white focus:text-white hover:bg-teal-600 hover:border-teal-600 focus:border-teal-600">
+                        class="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-teal-600 hover:text-white focus:text-white hover:bg-teal-600 hover:border-teal-600 focus:border-teal-600 dark:text-white">
                         <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                             fill="currentColor">
                             <path fill-rule="evenodd" clip-rule="evenodd"

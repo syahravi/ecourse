@@ -19,8 +19,9 @@
     <!-- search section -->
     <x-landing.search-section :url="route('category', $category->slug)" />
     <!-- course section -->
-    <div class="w-full bg-slate-700 p-3 border border-dashed border-slate-800">
-        <div class="container mx-auto">
+    <div class="py-10 overflow-hidden  sm:py-16 lg:py-14 ">
+        <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl py-2">
+            <h2 class="text-2xl font-bold text-center leading-tight text-black sm:text-3xl lg:text-4xl">Course Yang Tersedia</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 container mx-auto my-5 items-start">
                 @foreach ($courses as $course)
                     <x-landing.course-item :course="$course" />

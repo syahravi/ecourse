@@ -73,11 +73,11 @@
                             </svg>
                         </button>
                         <ul x-cloak x-show="isOpen || isHovered" @click.away="isOpen = false"
-                            class="absolute font-normal bg-white shadow overflow-hidden rounded-lg w-48 mt-2 py-2 left-0 z-20">
+                            class="absolute font-normal bg-white dark:bg-slate-800 shadow overflow-hidden rounded-lg w-48 mt-2 py-2 left-0 z-20">
                             @foreach ($categories as $category)
                                 <li>
                                     <a href="{{ route('category', $category->slug) }}"
-                                        class="flex items-center p-3 hover:text-teal-500 rounded-lg text-sm text-black">
+                                        class="flex items-center p-3 hover:text-teal-500 rounded-lg text-sm text-black dark:text-white">
                                         <span class="ml-2">{{ $category->name }}</span>
                                     </a>
                                 </li>
@@ -184,11 +184,11 @@
                             </svg>
                         </button>
                         <ul x-cloak x-show="isOpen || isHovered" @click.away="isOpen = false"
-                            class="absolute font-normal bg-white shadow overflow-hidden rounded-lg w-48 mt-2 py-1 right-0 z-20">
+                            class="absolute font-normal bg-white dark:bg-slate-800 shadow overflow-hidden rounded-lg w-48 mt-2 py-1 right-0 z-20">
                             <li>
                                 @role('admin')
                                     <a href="{{ route('admin.dashboard') }}"
-                                        class="p-3 rounded-lg text-sm font-semibold text-slate-700 flex items-center gap-2 hover:text-teal-500">
+                                        class="p-3 rounded-lg text-sm font-semibold text-slate-700 dark:text-white flex items-center gap-2 hover:text-teal-500">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-apps w-5 h-5" width="24" height="24"
                                             viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
@@ -204,7 +204,7 @@
                                     </a>
                                 @else
                                     <a href="{{ route('member.dashboard') }}"
-                                        class="p-3 rounded-lg text-sm font-semibold text-slate-700 flex items-center gap-2 hover:text-teal-500">
+                                        class="p-3 rounded-lg text-sm font-semibold text-slate-700 dark:text-white flex items-center gap-2 hover:text-teal-500">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-apps w-5 h-5" width="24" height="24"
                                             viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
@@ -223,7 +223,7 @@
                             <li class="">
                                 @role('admin')
                                     <a href="{{ route('admin.user.profile') }}"
-                                        class="p-3 rounded-lg text-sm font-semibold text-slate-700 flex items-center gap-2 hover:text-teal-500">
+                                        class="p-3 rounded-lg text-sm font-semibold text-slate-700 dark:text-white flex items-center gap-2 hover:text-teal-500">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-user-circle w-5 h-5" width="24"
                                             height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
@@ -237,7 +237,7 @@
                                     </a>
                                 @else
                                     <a href="{{ route('member.profile.index') }}"
-                                        class="p-3 rounded-lg text-sm font-semibold text-slate-700 flex items-center gap-2 hover:text-teal-500">
+                                        class="p-3 rounded-lg text-sm font-semibold text-slate-700 dark:text-white flex items-center gap-2 hover:text-teal-500">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-user-circle w-5 h-5" width="24"
                                             height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
@@ -252,7 +252,7 @@
                                 @endrole
                             </li>
                             <a href="{{ route('logout') }}"
-                                class="p-3 rounded-lg text-sm font-semibold text-slate-700 flex items-center gap-2 hover:text-teal-500"
+                                class="p-3 rounded-lg text-sm font-semibold text-slate-700 dark:text-white flex items-center gap-2 hover:text-teal-500"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="icon icon-tabler icon-tabler-logout w-5 h-5" width="24" height="24"
@@ -291,25 +291,25 @@
                         </svg>
                     </a>
                 </div>
-                <button class="theme-toggle-mobile text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
-                    <svg class="theme-toggle-dark-icon hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                <button
+                    class="theme-toggle-mobile text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    <svg class="theme-toggle-dark-icon-mobile hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                     </svg>
-                    <svg class="theme-toggle-light-icon-mobile hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
+                    <svg class="theme-toggle-light-icon-mobile hidden w-5 h-5" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
                             fill-rule="evenodd" clip-rule="evenodd"></path>
                     </svg>
                 </button>
-                
 
-                <div class="text-slate-700 relative" x-data="{ isOpen: false }">
+
+                <div class="text-slate-700 dark:text-white relative" x-data="{ isOpen: false }">
                     @guest
                         <button @click="isOpen = !isOpen" @keydown.escape="isOpen = false"
-                            class="flex items-center gap-2  rounded-lg px-4 py-2 hover:text-teal-500">
+                            class="flex items-center gap-2  rounded-lg px-4 py-2 hover:text-teal-500 dark:text-white">
                             <svg xmlns="http://www.w3.org/2000/svg" x-show="!isOpen"
                                 class="icon icon-tabler icon-tabler-align-right w-5 h-5" width="24" height="24"
                                 viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
@@ -350,10 +350,10 @@
                         </button>
                     @endauth
                     <ul x-cloak x-show="isOpen" @click.away="isOpen = false"
-                        class="absolute font-normal bg-white shadow overflow-hidden rounded-lg w-48  mt-2 py-1 -right-14 z-20">
+                        class="absolute font-normal bg-white dark:bg-slate-800 shadow overflow-hidden rounded-lg w-48  mt-2 py-1 -right-14 z-20">
                         <li>
                             <a href="{{ route('home') }}"
-                                class="p-3 rounded-lg text-sm font-semibold text-slate-700 flex items-center gap-2 hover:text-teal-500 {{ activeNav('home') }}">
+                                class="p-3 rounded-lg text-sm font-semibold text-slate-700 dark:text-white flex items-center gap-2 hover:text-teal-500 {{ activeNav('home') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="icon icon-tabler icon-tabler-home w-5 h-5" width="24" height="24"
                                     viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
@@ -368,7 +368,7 @@
                         </li>
                         <li>
                             <a href="{{ route('course.index') }}"
-                                class="p-3 rounded-lg text-sm font-semibold text-slate-700 flex items-center gap-2 hover:text-teal-500 {{ activeNav('course*') }}">
+                                class="p-3 rounded-lg text-sm font-semibold text-slate-700 dark:text-white flex items-center gap-2 hover:text-teal-500 {{ activeNav('course*') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="icon icon-tabler icon-tabler-device-laptop w-5 h-5" width="24"
                                     height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
@@ -383,7 +383,7 @@
                         <li>
                             <div class="relative" x-data="{ isOpen: false }">
                                 <button @click="isOpen = !isOpen" @keydown.escape="isOpen = false"
-                                    class="p-3 rounded-lg text-sm font-semibold text-slate-700 flex items-center gap-2 hover:text-teal-500 {{ activeNav('category*') }}">
+                                    class="p-3 rounded-lg text-sm font-semibold text-slate-700 dark:text-white flex items-center gap-2 hover:text-teal-500 {{ activeNav('category*') }}">
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                         class="icon icon-tabler icon-tabler-category-2 w-5 h-5" width="24"
                                         height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
@@ -414,7 +414,7 @@
                                     @foreach ($categories as $category)
                                         <li>
                                             <a href="{{ route('category', $category->slug) }}"
-                                                class="flex items-center p-3 hover:text-teal-500 text-sm text-slate-700 ml-3">
+                                                class="flex items-center p-3 hover:text-teal-500 text-sm text-slate-700 dark:text-white ml-3">
                                                 <img src="{{ $category->image }}" class="w-5 h-5 object-cover" />
                                                 <span class="ml-2">{{ $category->name }}</span>
                                             </a>
@@ -425,7 +425,7 @@
                         </li>
                         <li>
                             <a href="{{ route('review') }}"
-                                class="p-3 rounded-lg text-sm font-semibold text-slate-700 flex items-center gap-2 hover:text-teal-500 {{ activeNav('review') }}">
+                                class="p-3 rounded-lg text-sm font-semibold text-slate-700 dark:text-white flex items-center gap-2 hover:text-teal-500 {{ activeNav('review') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="icon icon-tabler icon-tabler-message-2 w-5 h-5" width="24"
                                     height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
@@ -443,7 +443,7 @@
 
                         <li>
                             <a href="{{ route('showcase') }}"
-                                class="p-3 rounded-lg text-sm font-semibold text-slate-700 flex items-center gap-2 hover:text-teal-500 {{ activeNav('showcase') }}">
+                                class="p-3 rounded-lg text-sm font-semibold text-slate-700 dark:text-white flex items-center gap-2 hover:text-teal-500 {{ activeNav('showcase') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     class="icon icon-tabler icon-tabler-source-code w-5 h-5" width="24"
                                     height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
@@ -460,7 +460,7 @@
                         @guest
                             <li>
                                 <a href="{{ route('login') }}"
-                                    class="p-3 rounded-lg text-sm font-semibold text-slate-700 flex items-center gap-2 hover:text-teal-500">
+                                    class="p-3 rounded-lg text-sm font-semibold text-slate-700 dark:text-white flex items-center gap-2 hover:text-teal-500">
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                         class="icon icon-tabler icon-tabler-user-check w-5 h-5" width="24"
                                         height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
@@ -475,7 +475,7 @@
                             </li>
                             <li>
                                 <a href="{{ route('register') }}"
-                                    class="p-3 rounded-lg text-sm font-semibold text-slate-700 flex items-center gap-2 hover:text-teal-500">
+                                    class="p-3 rounded-lg text-sm font-semibold text-slate-700 dark:text-white flex items-center gap-2 hover:text-teal-500">
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                         class="icon icon-tabler icon-tabler-user-plus w-5 h-5" width="24"
                                         height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
@@ -493,7 +493,7 @@
                             @role('admin')
                                 <li class="border-t border-dashed border-slate-700">
                                     <a href="{{ route('admin.dashboard') }}"
-                                        class="p-3 rounded-lg text-sm font-semibold text-slate-700 flex items-center gap-2 hover:text-teal-500">
+                                        class="p-3 rounded-lg text-sm font-semibold text-slate-700 dark:text-white flex items-center gap-2 hover:text-teal-500">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-apps w-5 h-5" width="24" height="24"
                                             viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
@@ -510,7 +510,7 @@
                                 </li>
                                 <li class="border-b border-dashed border-slate-700">
                                     <a href="{{ route('admin.user.profile') }}"
-                                        class="p-3 rounded-lg text-sm font-semibold text-slate-700 flex items-center gap-2 hover:text-teal-500">
+                                        class="p-3 rounded-lg text-sm font-semibold text-slate-700 dark:text-white flex items-center gap-2 hover:text-teal-500">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-user-circle w-5 h-5" width="24"
                                             height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
@@ -527,7 +527,7 @@
                             @role('member')
                                 <li class="border-t border-dashed border-slate-700">
                                     <a href="{{ route('member.dashboard') }}"
-                                        class="p-3 rounded-lg text-sm font-semibold text-slate-700 flex items-center gap-2 hover:text-teal-500">
+                                        class="p-3 rounded-lg text-sm font-semibold text-slate-700 dark:text-white flex items-center gap-2 hover:text-teal-500">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-apps w-5 h-5" width="24" height="24"
                                             viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
@@ -544,7 +544,7 @@
                                 </li>
                                 <li>
                                     <a href="{{ route('member.profile.index') }}"
-                                        class="p-3 rounded-lg text-sm font-semibold text-slate-700 flex items-center gap-2 hover:text-teal-500">
+                                        class="p-3 rounded-lg text-sm font-semibold text-slate-700 dark:text-white flex items-center gap-2 hover:text-teal-500">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-user-circle w-5 h-5" width="24"
                                             height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor"
@@ -560,7 +560,7 @@
                             @endrole
                             <li>
                                 <a href="{{ route('logout') }}"
-                                    class="p-3 rounded-lg text-sm font-semibold text-slate-700 flex items-center gap-2 hover:text-teal-500"
+                                    class="p-3 rounded-lg text-sm font-semibold text-slate-700 dark:text-white flex items-center gap-2 hover:text-teal-500"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                         class="icon icon-tabler icon-tabler-logout w-5 h-5" width="24" height="24"

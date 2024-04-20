@@ -1,4 +1,4 @@
-<section class="bg-white bg-opacity-30 py-9 sm:py-16 lg:py-1 dark:bg-slate-800 ">
+<section class="bg-white bg-opacity-30 py-9 md:py-16  dark:bg-slate-800 ">
     <div class="px-4 mx-auto max-w-7xl lg:mt-0 sm:px-6 lg:px-8">
         <div class="max-w-screen-2xl mt-10 md:mt-0">
             <div class="grid items-center grid-cols-1 lg:grid-cols-2 gap-12">

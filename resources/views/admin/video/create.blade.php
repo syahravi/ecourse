@@ -38,7 +38,7 @@
     </div>
 @endsection
 
-@section('scripts')
+@push('js')
     <script>
         ClassicEditor
             .create(document.querySelector('#teori'))
@@ -49,4 +49,4 @@
                 console.error(error);
             });
     </script>
-@endsection
+@endpush

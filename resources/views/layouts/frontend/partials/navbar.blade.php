@@ -1,10 +1,10 @@
-<div class="w-full shadow-sm bg-white z-50 p-5  fixed dark:bg-slate-700">
+<div class="w-full shadow-sm bg-white z-50 p-5  fixed dark:bg-slate-800">
     <div class="px-4 mx-auto sm:px-6 lg:px-8">
         <div class="flex items-center justify-around ">
             <ul class="flex justify-start items-center  gap-5">
 
                 <li>
-                    <a href="/" class="flex items-center text-lg text-slate-700 font-semibold">
+                    <a href="/" class="flex items-center ">
                         <img src="{{ asset('asset/logo1.png') }}" alt="unusia course" class="w-24 lg:w-32  h-auto">
 
                     </a>
@@ -278,7 +278,7 @@
             <!-- Mobile Nav -->
             <div class="flex gap-1 items-center md:hidden">
 
-                <div class="rounded-lg px-4 py-2 bg-white dark:bg-slate-700 hover:text-teal-500">
+                <div class="rounded-lg px-4 py-2 bg-white dark:bg-slate-800 hover:text-teal-500">
                     <a href="{{ route('cart.index') }}">
                         <svg xmlns="http://www.w3.org/2000/svg"
                             class="icon icon-tabler icon-tabler-basket w-5 h-5 dark:text-white {{ Route::is('cart.index') ? 'text-blue-500' : '' }}"

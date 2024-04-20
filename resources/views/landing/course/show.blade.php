@@ -1,7 +1,7 @@
 @extends('layouts.frontend.app', ['title' => 'Course Detail'])
 
 @section('content')
-    <div class="w-full dark:text-white  dark:bg-slate-800 md:py-28 p-5 md:p-20">
+    <div class="w-full bg-gray-300 dark:text-white  dark:bg-slate-900 md:py-28 p-5 md:p-20">
         <div class="container mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-4 md:gap-20">
                 <div class="md:col-span-2">
@@ -205,12 +205,12 @@
                 </div>
             </div>
         </div>
-        <div id="review" class="w-full dark:bg-gray-800 border-t border-b p-5 md:p-20 border-dashed border-slate-700">
+        <div id="review" class="w-full bg-gray-300 dark:bg-slate-900 border-t border-b p-5 md:p-20 border-dashed border-slate-700">
             <div class="container mx-auto">
                 <div class="p-4">
                     <div class="flex flex-col gap-2 text-center items-center mb-10">
                         <h1 class="text-2xl dark:text-white font-semibold">Review</h1>
-                        <p class="text-sm text-gray-400 lg:mx-96">
+                        <p class="text-sm dark:text-white lg:mx-96">
                             Kumpulan review dari para member yang telah membeli course ini
                         </p>
                         <div class="w-60 bg-gray-700 h-1 mt-2"></div>

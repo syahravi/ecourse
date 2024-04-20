@@ -1,7 +1,7 @@
 @props(['user', 'total'])
 <form action="{{ route('checkout.store') }}" method="get">
     <div class="border rounded-lg overflow-hidden">
-        <div class="bg-teal-500 border-b px-4 py-3 text-white font-medium flex items-center gap-1">
+        <div class="dark:bg-teal-500 bg-green-500 border-b px-4 py-3 text-white font-medium flex items-center gap-1">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-receipt w-5 h-5" width="24"
                 height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
                 stroke-linecap="round" stroke-linejoin="round">
@@ -12,26 +12,26 @@
             </svg>
             Konfirmasi Pesanan
         </div>
-        <div class="p-4 bg-white">
+        <div class="p-4 bg-white dark:bg-slate-900">
             <div class="flex flex-col gap-4">
                 <div class="flex flex-col gap-y-2">
-                    <label class="text-base text-gray-700 font-medium">
+                    <label class="text-base text-gray-700  dark:text-white font-medium">
                         Nama Lengkap
                     </label>
                     <input type="text"
-                        class="rounded-md border p-2 text-sm text-gray-700 focus:outline-none bg-gray-100 cursor-not-allowed"
+                        class="rounded-md border p-2 text-sm text-gray-700 dark:text-white focus:outline-none bg-gray-100 cursor-not-allowed"
                         value="{{ $user->name }}" name="name" readonly="">
                 </div>
                 <div class="flex flex-col gap-y-2">
-                    <label class="text-base text-gray-700 font-medium">
+                    <label class="text-base text-gray-700 dark:text-white font-medium">
                         Email
                     </label>
                     <input type="email"
-                        class="rounded-lg border p-2 text-sm text-gray-700 focus:outline-none bg-gray-100 cursor-not-allowed"
+                        class="rounded-lg border p-2 text-sm text-gray-700 dark:text-white focus:outline-none bg-gray-100 cursor-not-allowed"
                         value="{{ $user->email }}" name="email" readonly="">
                 </div>
                 <div class="flex flex-col gap-y-2">
-                    <label class="text-base text-gray-700 font-medium">
+                    <label class="text-base text-gray-700 dark:text-white font-medium">
                         Total Bayar
                     </label>
                     <input type="text"
@@ -42,7 +42,7 @@
         </div>
     </div>
     <div class="my-3">
-        <button class="text-white bg-teal-500 hover:bg-teal-800 rounded-lg w-full p-2">
+        <button class="text-white dark:bg-teal-500 dark:hover:bg-teal-600 bg-green-500 hover:bg-green-600 rounded-lg w-full p-2">
             Lanjutkan Ke Pembayaran
         </button>
     </div>

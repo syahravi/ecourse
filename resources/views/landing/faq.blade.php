@@ -21,16 +21,16 @@
         </div>
     </section>
     <div class="relative font-inter antialiased">
-        <div class="relative min-h-4 flex flex-col justify-center bg-slate-50 overflow-hidden">
+        <div class="relative min-h-4 flex flex-col justify-center bg-slate-50 dark:bg-slate-900 overflow-hidden">
             <div class="w-full max-w-7xl mx-auto px-4 md:px-6 py-24">
-                <h1 class="text-2xl font-bold text-slate-900 mb-4">FAQs</h1>
+                <h1 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">FAQs</h1>
                 <!-- Komponen Akordion -->
                 <div class="divide-y divide-slate-200">
                     <!-- Item Akordion 1 -->
                     <div x-data="{ expanded: false }" class="py-2">
                         <h2>
                             <button id="faqs-title-01" type="button"
-                                class="flex items-center justify-between w-full text-left font-semibold py-2"
+                                class="flex items-center justify-between w-full text-left font-semibold py-2 dark:text-white"
                                 @click="expanded = !expanded" :aria-expanded="expanded" aria-controls="faqs-text-01">
                                 <span>Apa saja kursus yang ditawarkan?</span>
                                 <svg class="fill-indigo-500 shrink-0 ml-8" width="16" height="16"
@@ -45,7 +45,7 @@
                             </button>
                         </h2>
                         <div id="faqs-text-01" role="region" aria-labelledby="faqs-title-01"
-                            class="grid text-sm text-slate-600 overflow-hidden transition-all duration-300 ease-in-out"
+                            class="grid text-sm text-slate-600  dark:text-white overflow-hidden transition-all duration-300 ease-in-out"
                             :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'">
                             <div class="overflow-hidden">
                                 <p class="pb-3">
@@ -60,7 +60,7 @@
                     <div x-data="{ expanded: false }" class="py-2">
                         <h2>
                             <button id="faqs-title-02" type="button"
-                                class="flex items-center justify-between w-full text-left font-semibold py-2"
+                                class="flex items-center justify-between w-full text-left font-semibold py-2 dark:text-white"
                                 @click="expanded = !expanded" :aria-expanded="expanded" aria-controls="faqs-text-02">
                                 <span>Apakah Anda menyediakan sertifikasi untuk kursus Anda?</span>
                                 <svg class="fill-indigo-500 shrink-0 ml-8" width="16" height="16"
@@ -75,7 +75,7 @@
                             </button>
                         </h2>
                         <div id="faqs-text-02" role="region" aria-labelledby="faqs-title-02"
-                            class="grid text-sm text-slate-600 overflow-hidden transition-all duration-300 ease-in-out"
+                            class="grid text-sm text-slate-600 dark:text-white overflow-hidden transition-all duration-300 ease-in-out"
                             :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'">
                             <div class="overflow-hidden">
                                 <p class="pb-3">
@@ -90,7 +90,7 @@
                     <div x-data="{ expanded: false }" class="py-2">
                         <h2>
                             <button id="faqs-title-03" type="button"
-                                class="flex items-center justify-between w-full text-left font-semibold py-2"
+                                class="flex items-center justify-between dark:text-white w-full text-left font-semibold py-2"
                                 @click="expanded = !expanded" :aria-expanded="expanded" aria-controls="faqs-text-03">
                                 <span>Apakah kursus Anda dapat diikuti kapan saja?</span>
                                 <svg class="fill-indigo-500 shrink-0 ml-8" width="16" height="16"
@@ -105,7 +105,7 @@
                             </button>
                         </h2>
                         <div id="faqs-text-03" role="region" aria-labelledby="faqs-title-03"
-                            class="grid text-sm text-slate-600 overflow-hidden transition-all duration-300 ease-in-out"
+                            class="grid text-sm text-slate-600 dark:text-white overflow-hidden transition-all duration-300 ease-in-out"
                             :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'">
                             <div class="overflow-hidden">
                                 <p class="pb-3">
@@ -119,7 +119,7 @@
                     <div x-data="{ expanded: false }" class="py-2">
                         <h2>
                             <button id="faqs-title-04" type="button"
-                                class="flex items-center justify-between w-full text-left font-semibold py-2"
+                                class="flex items-center dark:text-white justify-between w-full text-left font-semibold py-2"
                                 @click="expanded = !expanded" :aria-expanded="expanded" aria-controls="faqs-text-04">
                                 <span>Apakah Anda menyediakan dukungan instruktur?</span>
                                 <svg class="fill-indigo-500 shrink-0 ml-8" width="16" height="16"
@@ -134,7 +134,7 @@
                             </button>
                         </h2>
                         <div id="faqs-text-04" role="region" aria-labelledby="faqs-title-04"
-                            class="grid text-sm text-slate-600 overflow-hidden transition-all duration-300 ease-in-out"
+                            class="grid text-sm text-slate-600 dark:text-white overflow-hidden transition-all duration-300 ease-in-out"
                             :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'">
                             <div class="overflow-hidden">
                                 <p class="pb-3">

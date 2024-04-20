@@ -1,7 +1,7 @@
 @extends('layouts.frontend.app', ['title' => 'Cart'])
 
 @section('content')
-    <div class="w-full p-2 md:pt-24 md:p-16 bg-gray-500">
+    <div class="w-full py-24 md:py-32 bg-gray-500">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
                 <div class="col-span-12 lg:col-span-8">

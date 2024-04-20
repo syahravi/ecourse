@@ -2,7 +2,7 @@
 
 @section('content')
     @include('layouts.frontend.partials.hero')
-    <section class="relative font-inter antialiased dark:bg-slate-800">
+    <section class="relative font-inter antialiased dark:bg-slate-900">
 
         <div class="relative  flex flex-col justify-center  overflow-hidden">
             <div class="w-full mx-auto px-4 ">
@@ -57,10 +57,10 @@
         </div>
     
     </section>
-    <aside class="  text-black p-6 dark:bg-slate-800 dark:text-white">
+    <aside class="  p-6 dark:bg-slate-900 dark:text-white">
         <div class="flex flex-col gap-4 items-center mt-8">
             <h1 class="text-3xl font-semibold ">DAFTAR COURSE</h1>
-            <p class="text-sm text-black  lg:mx-auto text-center md:text-left dark:text-white">
+            <p class="text-sm  lg:mx-auto text-center md:text-left dark:text-white">
                 Kami menyediakan berbagai macam pembahasan dengan studi kasus yang dapat membantu menjadi seorang
                 .
             </p>
@@ -68,7 +68,7 @@
         </div>
     </aside>
 
-    <section class="py-10 overflow-hidden  sm:py-16 lg:py-14 dark:bg-slate-800">
+    <section class="py-10 overflow-hidden  sm:py-16 lg:py-14 dark:bg-slate-900">
         <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl py-2">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                 @foreach ($courses->take(4) as $course)
@@ -92,12 +92,12 @@
             </a>
         </div>
     </section>
-    <div class="bg-teal-50 dark:bg-slate-800 ">
-        <section class="pt-10 sm:pt-16 lg:pt-20">
+    <div class="bg-teal-50  dark:bg-teal-400 ">
+        <section class="py-10 sm:py-16 lg:py-20">
             <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
                     <div>
-                        <img class="w-full" src="{{ asset('asset/bella.png') }}" alt="" />
+                        <img class="w-full" src="{{ asset('asset/Biru dan Oranye Modern Webinar Parenting Instagram Post.png') }}" alt="" />
                     </div>
                     <div>
                         <h1 class="text-4xl font-bold text-black sm:text-6xl lg:text-7xl dark:text-white">
@@ -110,7 +110,7 @@
 
                         <div class="mt-10 block md:flex md:flex-row justify-center md:justify-start sm:space-x-8">
                             <a href="{{ route('register') }}" title=""
-                                class="flex justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 bg-teal-500 hover:bg-teal-600 focus:bg-teal-600 dark:text-white"
+                                class="flex justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 bg-teal-500 hover:bg-teal-600 focus:bg-teal-700 dark:text-white dark:bg-indigo-700 dark:hover:bg-indigo-800 dark:focus:bg-indigo-900"
                                 role="button">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus"
                                     width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
@@ -131,7 +131,7 @@
             </div>
         </section>
     </div>
-    <div class="bg-white dark:bg-slate-800">
+    <div class="bg-white dark:bg-slate-900">
         <section class="py-10 sm:py-16 lg:py-24">
             <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 ">

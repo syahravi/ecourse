@@ -1,6 +1,6 @@
 @props(['carts', 'total'])
 <div class="border rounded-lg overflow-hidden">
-    <div class="bg-teal-500 border-b px-4 py-3 text-white font-medium flex items-center gap-1">
+    <div class=" dark:bg-teal-500   bg-green-500 border-b px-4 py-3 text-white font-medium flex items-center gap-1">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-basket w-5 h-5" width="24"
             height="24" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" fill="none"
             stroke-linecap="round" stroke-linejoin="round">
@@ -12,8 +12,8 @@
         Keranjang Saya
     </div>
     <div class="overflow-x-auto relative">
-        <table class="w-full text-sm text-left text-gray-500 divide-y divide-gray-200">
-            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+        <table class="w-full text-sm text-left text-gray-500 divide-y divide-gray-200 dark:divide-gray-600">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-slate-900 dark:text-white">
                 <tr>
                     <th scope="col" class="px-4 py-3 w-0"></th>
                     <th scope="col" class="px-4 py-3">Nama Barang</th>
@@ -21,7 +21,7 @@
                     <th scope="col" class="px-4 py-3 w-0">Aksi</th>
                 </tr>
             </thead>
-            <tbody class="divide-y divide-gray-200 bg-white">
+            <tbody class="divide-y divide-gray-200 dark:divide-gray-600 bg-white dark:bg-slate-900 dark:text-white">
                 @forelse ($carts as $i=> $cart)
                     <tr>
                         <td class="py-3 px-4 whitespace-nowrap">

@@ -1,7 +1,7 @@
 @extends('layouts.frontend.app', ['title' => 'Checkout'])
 
 @section('content')
-    <section class="pt-20 bg-gray-100 sm:pt-16 lg:pt-24">
+    <section class="pt-20 bg-gray-100 dark:bg-slate-900 sm:pt-16 lg:pt-24">
         <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
             <div class="max-w-2xl mx-auto text-center">
                 <h2 class="text-3xl font-bold leading-tight dark:text-white sm:text-4xl lg:text-5xl lg:leading-tight"> Pesanan anda telah kami konfirmasi, Silahkan lanjutkan dengan melakukan

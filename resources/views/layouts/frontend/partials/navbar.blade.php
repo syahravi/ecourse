@@ -524,7 +524,7 @@
                                     </a>
                                 </li>
                             @endrole
-                            @role('member')
+                            @role('member|author')
                                 <li class="border-t border-dashed border-slate-700">
                                     <a href="{{ route('member.dashboard') }}"
                                         class="p-3 rounded-lg text-sm font-semibold text-slate-700 dark:text-white flex items-center gap-2 hover:text-teal-500">

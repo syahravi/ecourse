@@ -25,6 +25,7 @@ class ShowcaseRequest extends FormRequest
             $data = [
                 'course_id' => 'required',
                 'title' => 'required',
+                'link' => 'required',
                 'cover' => 'required|mimes:png,jpg,jpeg|max:2048',
                 'description' => 'required',
 
@@ -33,6 +34,7 @@ class ShowcaseRequest extends FormRequest
             $data = [
                 'course_id' => 'required',
                 'title' => 'required',
+                'link' => 'required',
                 'cover' => 'mimes:png,jpg,jpeg|max:2048',
                 'description' => 'required',
             ];

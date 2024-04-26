@@ -126,11 +126,10 @@
             </div>
         </section>
     </div>
-
+  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script>
-        const url = 'https://ecourse.syahravi.my.id/' + '{{ $certificate->user->name }}' + '{{ $courseName }}' +
-            '{{ $certificate->serial_number }}';
+      const url = 'https://ecourse.syahravi.my.id/' + '{{ $certificate->user->name }}' + '{{ $courseName }}' + '{{ $certificate->serial_number }}';
 
         const pdfViewer = document.getElementById('pdf-viewer');
 
@@ -168,8 +167,7 @@
 
         function copyLink() {
             const copyText = document.createElement("input");
-            copyText.value =
-            'https://ecourse.syahravi.my.id/{{ $user }}{{ $idsertifikat }}'; // Ganti dengan URL yang diinginkan
+            copyText.value = "{{ Request::url() }}";
             document.body.appendChild(copyText);
             copyText.select();
             copyText.setSelectionRange(0, 99999); /* For mobile devices */

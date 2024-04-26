@@ -129,29 +129,29 @@
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script>
-        const url = '{{ route('Landing.certificates.pdf', ['user' => $certificate->user->name, 'course' => $courseName , 'serialNumber' => $certificate->serial_number]) }}';
+        const url = '{{ secure_url(route('Landing.certificates.pdf', ['user' => $certificate->user->name, 'course' => $courseName , 'serialNumber' => $certificate->serial_number])) }}';
         const pdfViewer = document.getElementById('pdf-viewer');
-
+    
         // Load PDF
         pdfjsLib.getDocument(url).promise.then(function(pdf) {
             pdf.getPage(1).then(function(page) {
                 let scale = 1; // Default scale for desktop
-
+    
                 // Check if it's a mobile device (max-width: 767px)
                 if (window.matchMedia("(max-width: 767px)").matches) {
                     scale = 0.5; // Scale for mobile
                 }
-
+    
                 const viewport = page.getViewport({
                     scale: scale
                 });
-
+    
                 // Prepare canvas using PDF page dimensions
                 const canvas = document.createElement('canvas');
                 const context = canvas.getContext('2d');
                 canvas.height = viewport.height;
                 canvas.width = viewport.width;
-
+    
                 // Render PDF page into canvas context
                 const renderContext = {
                     canvasContext: context,
@@ -162,25 +162,26 @@
                 pdfViewer.appendChild(canvas);
             });
         });
-
-
+    
+    
         function copyLink() {
             const copyText = document.createElement("input");
-            copyText.value = "{{ Request::url() }}";
+            copyText.value = "{{ secure_url(Request::url()) }}";
             document.body.appendChild(copyText);
             copyText.select();
             copyText.setSelectionRange(0, 99999); /* For mobile devices */
             document.execCommand("copy");
             document.body.removeChild(copyText);
-
+    
             // Tampilkan notifikasi
             const notification = document.getElementById('copyNotification');
             notification.classList.remove('hidden');
-
+    
             // Sembunyikan notifikasi setelah 2 detik
             setTimeout(function() {
                 notification.classList.add('hidden');
             }, 3000);
         }
     </script>
+    
 @endsection

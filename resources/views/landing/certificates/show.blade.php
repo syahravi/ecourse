@@ -133,7 +133,7 @@
             function copyLink() {
                 const copyText = document.createElement("input");
                 copyText.value =
-                    'https://ecourse.syahravi.my.id/{{ $certificate->user->name }}{{ $courseName }}{{ $certificate->serial_number }}';
+                    'https://ecourse.syahravi.my.id/certificates{{ $certificate->user->name }}{{ $courseName }}{{ $certificate->serial_number }}';
                 document.body.appendChild(copyText);
                 copyText.select();
                 copyText.setSelectionRange(0, 99999); /* For mobile devices */
@@ -151,7 +151,7 @@
             }
 
             const url =
-                'https://ecourse.syahravi.my.id/{{ $certificate->user->name }}{{ $courseName }}{{ $certificate->serial_number }}';
+                'https://ecourse.syahravi.my.id/certificates{{ $certificate->user->name }}{{ $courseName }}{{ $certificate->serial_number }}';
             const pdfViewer = document.getElementById('pdf-viewer');
 
             // Load PDF

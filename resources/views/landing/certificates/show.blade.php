@@ -129,8 +129,7 @@
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script>
-      const url = 'https://ecourse.syahravi.my.id/certificates' + '{{ $certificate->user->name }}' + '{{ $courseName }}' + '{{ $certificate->serial_number }}/';
-
+        const url = '{{ https://ecourse.syahravi.my.id/certificates('Landing.certificates.pdf', ['user' => $certificate->user->name, 'course' => $courseName , 'serialNumber' => $certificate->serial_number]) }}';
         const pdfViewer = document.getElementById('pdf-viewer');
 
         // Load PDF

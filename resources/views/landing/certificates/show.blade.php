@@ -126,64 +126,63 @@
             </div>
         </section>
     </div>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <script>
+       const url = '{{ route('Landing.certificates.pdf', ['user' => $certificate->user->name, 'course' => $courseName , 'serialNumber' => $certificate->serial_number], false) }}';
 
-    @push('js')
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
-        <script>
-            function copyLink() {
-                const copyText = document.createElement("input");
-                copyText.value =
-                    'https://ecourse.syahravi.my.id/certificates{{ $certificate->user->name }}{{ $courseName }}{{ $certificate->serial_number }}';
-                document.body.appendChild(copyText);
-                copyText.select();
-                copyText.setSelectionRange(0, 99999); /* For mobile devices */
-                document.execCommand("copy");
-                document.body.removeChild(copyText);
+        const pdfViewer = document.getElementById('pdf-viewer');
 
-                // Tampilkan notifikasi
-                const notification = document.getElementById('copyNotification');
-                notification.classList.remove('hidden');
+        // Load PDF
+        pdfjsLib.getDocument(url).promise.then(function(pdf) {
+            pdf.getPage(1).then(function(page) {
+                let scale = 1; // Default scale for desktop
 
-                // Sembunyikan notifikasi setelah 2 detik
-                setTimeout(function() {
-                    notification.classList.add('hidden');
-                }, 3000);
-            }
+                // Check if it's a mobile device (max-width: 767px)
+                if (window.matchMedia("(max-width: 767px)").matches) {
+                    scale = 0.5; // Scale for mobile
+                }
 
-            const url =
-                'https://ecourse.syahravi.my.id/certificates{{ $certificate->user->name }}{{ $courseName }}{{ $certificate->serial_number }}';
-            const pdfViewer = document.getElementById('pdf-viewer');
-
-            // Load PDF
-            pdfjsLib.getDocument(url).promise.then(function(pdf) {
-                pdf.getPage(1).then(function(page) {
-                    let scale = 1; // Default scale for desktop
-
-                    // Check if it's a mobile device (max-width: 767px)
-                    if (window.matchMedia("(max-width: 767px)").matches) {
-                        scale = 0.5; // Scale for mobile
-                    }
-
-                    const viewport = page.getViewport({
-                        scale: scale
-                    });
-
-                    // Prepare canvas using PDF page dimensions
-                    const canvas = document.createElement('canvas');
-                    const context = canvas.getContext('2d');
-                    canvas.height = viewport.height;
-                    canvas.width = viewport.width;
-
-                    // Render PDF page into canvas context
-                    const renderContext = {
-                        canvasContext: context,
-                        viewport: viewport
-                    };
-                    page.render(renderContext);
-                    pdfViewer.innerHTML = '';
-                    pdfViewer.appendChild(canvas);
+                const viewport = page.getViewport({
+                    scale: scale
                 });
+
+                // Prepare canvas using PDF page dimensions
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                // Render PDF page into canvas context
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                };
+                page.render(renderContext);
+                pdfViewer.innerHTML = '';
+                pdfViewer.appendChild(canvas);
             });
-        </script>
-    @endpush
+        });
+
+
+        function copyLink() {
+            const copyText = document.createElement("input");
+            copyText.value = "https://{{ Request::getHost() }}{{ Request::getRequestUri() }}";
+
+            document.body.appendChild(copyText);
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+            document.execCommand("copy");
+            document.body.removeChild(copyText);
+
+            // Tampilkan notifikasi
+            const notification = document.getElementById('copyNotification');
+            notification.classList.remove('hidden');
+
+            // Sembunyikan notifikasi setelah 2 detik
+            setTimeout(function() {
+                notification.classList.add('hidden');
+            }, 3000);
+        }
+    </script>
 @endsection

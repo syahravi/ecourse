@@ -126,8 +126,9 @@
                             </p>
                         </div>
                         @foreach ($videos as $video)
-                            <div class="border-b p-4 ">
-                                <div class="flex justify-between dark:text-white">
+                        <div class="border-b p-4 ">
+                            <div class="flex justify-between dark:text-white">
+                                @if ($hasCompletedPretest || $video->intro == 2 || !$alreadyBought)
                                     <a href="{{ route('course.video', [$course->slug, $video->episode]) }}"
                                         class="flex flex-row items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg"
@@ -138,12 +139,31 @@
                                             <polyline points="7 7 12 12 7 17"></polyline>
                                             <polyline points="13 7 18 12 13 17"></polyline>
                                         </svg>
-                                        <p class=" text-xs md:text-sm ml-2 hover:text-red-500 transition-colors duration-300">{{ $video->episode }}.
+                                        <p class="text-xs md:text-sm ml-2 hover:text-red-500 transition-colors duration-300">{{ $video->episode }}.
                                             {{ $video->name }}</p>
                                     </a>
-                                    <div class="text-xs md:text-sm">
-                                        @if ($video->intro == 0)
-                                            @if ($alreadyBought)
+                                @else
+                                    <a href="{{ route('exams.pretest', [$course->slug]) }}"
+                                        class="flex flex-row items-center hover:text-red-500 transition-colors duration-300">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="icon icon-tabler icon-tabler-rocket w-5 h-5 text-blue-500 fill-white"
+                                            width="24" height="24" viewBox="0 0 24 24"
+                                            stroke-width="1.25" stroke="currentColor" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path
+                                                d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3">
+                                            </path>
+                                            <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3"></path>
+                                            <circle cx="15" cy="9" r="1"></circle>
+                                        </svg>
+                                        <p class="text-xs md:text-sm ml-2">{{ $video->episode }}. {{ $video->name }}</p>
+                                    </a>
+                                @endif
+                                <div class="text-xs md:text-sm">
+                                    @if ($video->intro == 0)
+                                        @if ($alreadyBought)
+                                            @if ($hasCompletedPretest)
                                                 <svg xmlns="http://www.w3.org/2000/svg"
                                                     class="icon icon-tabler icon-tabler-rocket w-5 h-5 text-blue-500 fill-white"
                                                     width="24" height="24" viewBox="0 0 24 24"
@@ -157,20 +177,38 @@
                                                     <circle cx="15" cy="9" r="1"></circle>
                                                 </svg>
                                             @else
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="icon icon-tabler icon-tabler-lock-open w-5 h-5" width="24"
-                                                    height="24" viewBox="0 0 24 24" stroke-width="1.25"
-                                                    stroke="currentColor" fill="none" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                                    <rect x="5" y="11" width="14" height="10"
-                                                        rx="2"></rect>
-                                                    <circle cx="12" cy="16" r="1"></circle>
-                                                    <path d="M8 11v-5a4 4 0 0 1 8 0"></path>
-                                                </svg>
+                                               
+                                                
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="icon icon-tabler icon-tabler-rocket w-5 h-5 text-blue-500 fill-white"
+                                                        width="24" height="24" viewBox="0 0 24 24"
+                                                        stroke-width="1.25" stroke="currentColor" fill="none"
+                                                        stroke-linecap="round" stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                        <path
+                                                            d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3">
+                                                        </path>
+                                                        <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3"></path>
+                                                        <circle cx="15" cy="9" r="1"></circle>
+                                                    </svg>
+                                                
                                             @endif
                                         @else
-                                            @if ($alreadyBought)
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                class="icon icon-tabler icon-tabler-lock-open w-5 h-5" width="24"
+                                                height="24" viewBox="0 0 24 24" stroke-width="1.25"
+                                                stroke="currentColor" fill="none" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                <rect x="5" y="11" width="14" height="10"
+                                                    rx="2"></rect>
+                                                <circle cx="12" cy="16" r="1"></circle>
+                                                <path d="M8 11v-5a4 4 0 0 1 8 0"></path>
+                                            </svg>
+                                        @endif
+                                    @else
+                                        @if ($alreadyBought)
+                                            @if ($hasCompletedPretest)
                                                 <svg xmlns="http://www.w3.org/2000/svg"
                                                     class="icon icon-tabler icon-tabler-rocket w-5 h-5 text-blue-500 fill-white"
                                                     width="24" height="24" viewBox="0 0 24 24"
@@ -184,23 +222,40 @@
                                                     <circle cx="15" cy="9" r="1"></circle>
                                                 </svg>
                                             @else
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="icon icon-tabler icon-tabler-lock text-red-500 w-5 h-5"
-                                                    width="24" height="24" viewBox="0 0 24 24"
-                                                    stroke-width="1.25" stroke="currentColor" fill="none"
-                                                    stroke-linecap="round" stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                                    <rect x="5" y="11" width="14" height="10"
-                                                        rx="2"></rect>
-                                                    <circle cx="12" cy="16" r="1"></circle>
-                                                    <path d="M8 11v-4a4 4 0 0 1 8 0v4"></path>
-                                                </svg>
+                                              
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="icon icon-tabler icon-tabler-rocket w-5 h-5 text-blue-500 fill-white"
+                                                        width="24" height="24" viewBox="0 0 24 24"
+                                                        stroke-width="1.25" stroke="currentColor" fill="none"
+                                                        stroke-linecap="round" stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                        <path
+                                                            d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3">
+                                                        </path>
+                                                        <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3"></path>
+                                                        <circle cx="15" cy="9" r="1"></circle>
+                                                    </svg>
+                                                
                                             @endif
+                                        @else
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                class="icon icon-tabler icon-tabler-lock text-red-500 w-5 h-5"
+                                                width="24" height="24" viewBox="0 0 24 24"
+                                                stroke-width="1.25" stroke="currentColor" fill="none"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                                <rect x="5" y="11" width="14" height="10"
+                                                    rx="2"></rect>
+                                                <circle cx="12" cy="16" r="1"></circle>
+                                                <path d="M8 11v-4a4 4 0 0 1 8 0v4"></path>
+                                            </svg>
                                         @endif
-                                    </div>
+                                    @endif
                                 </div>
                             </div>
-                        @endforeach
+                            
+                        </div>
+                    @endforeach                    
                     </div>
                 </div>
             </div>

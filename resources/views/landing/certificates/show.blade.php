@@ -50,6 +50,15 @@
                                     <h2 class="text-sm font-medium text-gray-900 dark:text-white">
                                         {{ $certificate->score }}
                                     </h2>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400 mb-2">Dengan Nilai Pretest</span>
+                                    <h2 class="text-sm font-medium text-gray-900 dark:text-white">
+                                        @if ($pretestScore)
+                                            {{ $pretestScore }}
+                                        @else
+                                            Belum mengerjakan pretest
+                                        @endif
+                                    </h2>
+                                    
                                 </div>
                             </div>
                         </div>

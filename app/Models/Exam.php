@@ -31,6 +31,10 @@ class Exam extends Model
     {
         return $this->hasMany(ExamScore::class);
     }
+    public function pretest()
+    {
+        return $this->hasMany(Pretest::class);
+    }
 
     // Method untuk memeriksa apakah pertanyaan sudah dijawab
     public function isAnswered()

@@ -39,6 +39,10 @@ class Course extends Model
     {
         return $this->hasMany(Exam::class);
     }
+    public function pretest()
+    {
+        return $this->hasMany(Pretest::class);
+    }
 
     public function carts()
     {

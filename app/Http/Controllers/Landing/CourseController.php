@@ -7,7 +7,7 @@ use App\Models\Course;
 use App\Models\Review;
 use App\Models\ExamScore;
 use App\Models\Transaction;
-use App\Models\Exam;
+use App\Models\Pretest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -36,37 +36,45 @@ class CourseController extends Controller
         // passing variabel $courses kedalam view.
         return view('landing.course.index', compact('courses'));
     }
-    
 
     public function show(Course $course)
-    {
-        $videos = Video::where('course_id', $course->id)->get();
+{
+    $videos = Video::where('course_id', $course->id)->get();
 
-        $enrolled = Transaction::with('details.course')
+    // Ambil data pretest pengguna untuk kursus ini
+    $pretest = Pretest::where('user_id', Auth::id())
+                    ->where('course_id', $course->id)
+                    ->first();
+
+    // Tentukan apakah pengguna telah menyelesaikan pretest
+    $hasCompletedPretest = $pretest !== null;
+
+    $enrolled = Transaction::with('details.course')
+        ->where('status', 'success')
+        ->whereHas('details', function ($query) use ($course) {
+            $query->where('course_id', $course->id);
+        })
+        ->count();
+
+    if (Auth::user()) {
+        $alreadyBought = Transaction::with('details.course')
             ->where('status', 'success')
+            ->where('user_id', Auth::id())
             ->whereHas('details', function ($query) use ($course) {
                 $query->where('course_id', $course->id);
             })
-            ->count();
-
-        if (Auth::user()) {
-            $alreadyBought = Transaction::with('details.course')
-                ->where('status', 'success')
-                ->where('user_id', Auth::id())
-                ->whereHas('details', function ($query) use ($course) {
-                    $query->where('course_id', $course->id);
-                })
-                ->first();
-        } else {
-            $alreadyBought = [];
-        }
-
-        $reviews = Review::where('course_id', $course->id)->get();
-
-        $avgRating = Review::where('course_id', $course->id)->avg('rating');
-
-        return view('landing.course.show', compact('course', 'videos', 'enrolled', 'alreadyBought', 'reviews', 'avgRating'));
+            ->first();
+    } else {
+        $alreadyBought = [];
     }
+
+    $reviews = Review::where('course_id', $course->id)->get();
+
+    $avgRating = Review::where('course_id', $course->id)->avg('rating');
+
+    return view('landing.course.show', compact('course', 'videos', 'enrolled', 'alreadyBought', 'reviews', 'avgRating', 'hasCompletedPretest'));
+}
+
 
     public function video(Course $course, $episode)
     {

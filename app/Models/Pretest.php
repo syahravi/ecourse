@@ -1,19 +1,18 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ExamScore extends Model
+class Pretest extends Model
 {
     use HasFactory;
-
+    protected $table = 'pretest';
     protected $fillable = [
         'user_id',
         'course_id',
-        'score',
-        'pretest',
-        'passed', // Kolom untuk menandai apakah ujian lulus atau tidak
+        'nilai',
     ];
 
     public function user()
@@ -31,8 +30,7 @@ class ExamScore extends Model
     {
         return $this->hasMany(Exam::class);
     }
-    public function certificates()
-    {
-        return $this->hasMany(Certificate::class);
-    }
+   
 }
+
+

@@ -23,6 +23,7 @@ use App\Http\Controllers\Member\CourseController as MemberCourseController;
 use App\Http\Controllers\Member\ReviewController as MemberReviewController;
 use App\Http\Controllers\Landing\CourseController as LandingCourseController;
 use App\Http\Controllers\Landing\ExamController as LandingExamController;
+use App\Http\Controllers\Landing\PretestController as LandingPretestController;
 use App\Http\Controllers\Landing\ReviewController as LandingReviewController;
 use App\Http\Controllers\Member\ProfileController as MemberProfileController;
 use App\Http\Controllers\Member\MyCourseController as MemberMyCourseController;
@@ -78,6 +79,16 @@ Route::middleware('verified')->group(function () {
             Route::post('/course/{course:slug}/submit-exam', 'submitExam')->name('submitExam');
         });
 });
+
+Route::middleware('verified')->group(function () {
+    Route::controller(LandingPretestController::class)
+        ->as('exams.') // Prefix nama rute yang benar
+        ->group(function () {
+            Route::get('/course/{course:slug}/soal-pretest', 'index')->name('pretest');
+            Route::post('/course/{course:slug}/submitPretest', 'submitPretest')->name('submitPretest');
+        });
+});
+
 
 Route::middleware(['verified'])->group(function () {
     Route::get('/category/{category:slug}', LandingCategoryController::class)->name('category');

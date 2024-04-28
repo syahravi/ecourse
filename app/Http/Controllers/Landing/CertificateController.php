@@ -9,45 +9,56 @@ use App\Http\Controllers\Controller;
 use App\Models\Certificate;
 use App\Models\User;
 use App\Models\Course;
+use App\Models\Pretest;
 
 class CertificateController extends Controller
 {
     public function show($user, $courseName, $serialNumber)
-    {
-        // Cari user berdasarkan nama pengguna (user)
-        $userModel = User::where('name', $user)->first();
+{
+    // Cari user berdasarkan nama pengguna (user)
+    $userModel = User::where('name', $user)->first();
 
-        // Validasi apakah user ditemukan
-        if (!$userModel) {
-            abort(404);
-        }
-
-        // Cari kursus berdasarkan nama
-        $course = Course::where('name', $courseName)->first();
-
-        // Validasi apakah kursus ditemukan
-        if (!$course) {
-            abort(404);
-        }
-
-        // Cari sertifikat berdasarkan user_id, course_id, dan serial number
-        $certificate = Certificate::where('user_id', $userModel->id)
-            ->where('course_id', $course->id)
-            ->where('serial_number', $serialNumber)
-            ->first();
-
-        // Validasi apakah sertifikat ditemukan
-        if (!$certificate) {
-            abort(404);
-        }
-
-        return view('landing.certificates.show', [
-            'certificate' => $certificate,
-            'user' => $userModel->name,
-            'courseName' => $course->name,
-            'serialNumber' => $certificate->serial_number,
-        ]);
+    // Validasi apakah user ditemukan
+    if (!$userModel) {
+        abort(404);
     }
+
+    // Cari kursus berdasarkan nama
+    $course = Course::where('name', $courseName)->first();
+
+    // Validasi apakah kursus ditemukan
+    if (!$course) {
+        abort(404);
+    }
+
+    // Cari sertifikat berdasarkan user_id, course_id, dan serial number
+    $certificate = Certificate::where('user_id', $userModel->id)
+        ->where('course_id', $course->id)
+        ->where('serial_number', $serialNumber)
+        ->first();
+
+    // Validasi apakah sertifikat ditemukan
+    if (!$certificate) {
+        abort(404);
+    }
+
+     // Cari nilai pretest berdasarkan user_id dan course_id
+     $pretest = Pretest::where('user_id', $userModel->id)
+     ->where('course_id', $course->id)
+     ->first();
+
+ // Nilai pretest
+ $pretestScore = $pretest ? $pretest->nilai : null;
+
+ return view('landing.certificates.show', [
+     'certificate' => $certificate,
+     'user' => $userModel->name,
+     'courseName' => $course->name,
+     'serialNumber' => $certificate->serial_number,
+     'pretestScore' => $pretestScore,
+ ]);
+}
+
 
     public function generatePDF($user, $courseName, $serialNumber)
     {

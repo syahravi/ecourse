@@ -10,6 +10,9 @@
                 <span class="{{ $examScore->passed ? 'text-teal-500' : 'text-red-500' }}"> {{ $examScore->passed ? 'Lulus' : 'Tidak Lulus' }}</span>
                 <span>Pada kelas {{$course->name}}</span>
             </p>
+            <p class="text-center py-3 text-sm">
+                Silahkan click Tombol di Bawah ini {{ $examScore->passed ? ' Untuk melihat Sertifikat anda' : ' Untuk Mengulangi Ujian Anda' }}"
+            </p>
             <div class="p-4 border-t mx-8">
                 @if ($examScore->passed)
                     @if (auth()->user()->hasRole(['admin']))
